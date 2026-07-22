@@ -10,7 +10,7 @@ const links = [
   { to: "/blog", label: "Blog" },
   { to: "/assistant", label: "Ask AI" },
   { to: "/community", label: "Community" },
-  { to: "/about-app", label: "The App" },
+  { to: "/features", label: "Features" },
   { to: "/contact", label: "Contact" },
 ];
 

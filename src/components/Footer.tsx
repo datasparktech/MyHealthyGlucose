@@ -33,6 +33,7 @@ export default function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-muted-2">Company</p>
             <ul className="mt-3 space-y-2 text-sm text-ink-dim">
+              <li><Link to="/features" className="hover:text-teal-300">Features</Link></li>
               <li><Link to="/about-app" className="hover:text-teal-300">About the App</Link></li>
               <li><Link to="/about-us" className="hover:text-teal-300">About Us</Link></li>
               <li>

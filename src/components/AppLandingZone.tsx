@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import appQr from "../assets/app-qr.svg";
+import todayShot from "../assets/screenshots/today-dashboard.jpg";
+import foodShot from "../assets/screenshots/food-diary.jpg";
 
 const PLAY_URL = "https://play.google.com/store/apps/details?id=com.glucosecompass.app";
 
@@ -76,12 +79,17 @@ export default function AppLandingZone() {
             </div>
           </Reveal>
 
-          {/* Right: phone mockups */}
+          {/* Right: real app screenshots */}
           <Reveal delay={0.12}>
             <div className="flex items-center justify-center gap-4">
-              <PhoneMock className="mt-8" hue="teal" label="Today" value="112" caption="mg/dL · in range" />
-              <PhoneMock hue="orange" label="HbA1c" value="6.4%" caption="est. trend ↓" big />
+              <RealPhone src={todayShot} alt="MyHealthyGlucose today dashboard showing glucose, carbs, and meals" className="mt-8" />
+              <RealPhone src={foodShot} alt="MyHealthyGlucose food diary with Indian meals and carb counts" big />
             </div>
+            <p className="mt-6 text-center">
+              <Link to="/features" className="text-sm font-medium text-teal-300 hover:text-teal-200">
+                See every screen →
+              </Link>
+            </p>
           </Reveal>
         </div>
       </div>
@@ -89,53 +97,27 @@ export default function AppLandingZone() {
   );
 }
 
-function PhoneMock({
+function RealPhone({
+  src,
+  alt,
   className = "",
-  hue,
-  label,
-  value,
-  caption,
   big,
 }: {
+  src: string;
+  alt: string;
   className?: string;
-  hue: "teal" | "orange";
-  label: string;
-  value: string;
-  caption: string;
   big?: boolean;
 }) {
-  const accent = hue === "teal" ? "#2dd4bf" : "#fb923c";
   return (
     <motion.div
       initial={{ y: 20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={`relative ${big ? "w-40 sm:w-48" : "w-36 sm:w-44"} ${className}`}
+      className={`relative ${big ? "w-40 sm:w-52" : "w-36 sm:w-44"} ${className}`}
     >
-      <div className="overflow-hidden rounded-[2rem] border-4 border-bg-elevated bg-bg shadow-2xl shadow-black/40 ring-1 ring-line">
-        <div className="flex h-6 items-center justify-center bg-bg-elevated">
-          <div className="h-1 w-10 rounded-full bg-line" />
-        </div>
-        <div className="p-4">
-          <p className="text-[10px] uppercase tracking-wide text-muted">{label}</p>
-          <div className="mt-6 flex flex-col items-center">
-            <div
-              className="flex h-24 w-24 items-center justify-center rounded-full"
-              style={{ background: `conic-gradient(${accent} 78%, rgba(255,255,255,0.06) 0)` }}
-            >
-              <div className="flex h-[4.5rem] w-[4.5rem] flex-col items-center justify-center rounded-full bg-bg">
-                <span className="font-display text-xl font-bold text-ink">{value}</span>
-              </div>
-            </div>
-            <p className="mt-3 text-center text-[11px] text-muted">{caption}</p>
-          </div>
-          <div className="mt-4 space-y-1.5">
-            {[70, 45, 60].map((w, i) => (
-              <div key={i} className="h-2 rounded-full bg-bg-elevated" style={{ width: `${w}%` }} />
-            ))}
-          </div>
-        </div>
+      <div className="overflow-hidden rounded-[1.6rem] border-4 border-bg-elevated bg-bg shadow-2xl shadow-black/40 ring-1 ring-line">
+        <img src={src} alt={alt} className="w-full" loading="lazy" />
       </div>
     </motion.div>
   );

@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 
 // Lazy-load everything except the home page to keep the initial bundle small
 const AboutApp = lazy(() => import("./pages/AboutApp"));
+const Features = lazy(() => import("./pages/Features"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Community = lazy(() => import("./pages/Community"));
@@ -66,6 +67,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about-app" element={<AboutApp />} />
+            <Route path="/features" element={<Features />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/community" element={<Community />} />
