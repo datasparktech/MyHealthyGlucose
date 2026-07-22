@@ -22,7 +22,7 @@ export default function Contact() {
       return;
     }
     if (!FORM_ID) {
-      setErrMsg("The contact form isn't connected yet. Email connect@datasparktech.com directly for now.");
+      setErrMsg("The contact form isn't connected yet. Email connect@myhealthyglucose.com directly for now.");
       return;
     }
     setStatus("sending");

@@ -40,7 +40,7 @@ export default function ComingSoon({
 
         <Reveal delay={0.25} className="mt-8">
           <a
-            href="mailto:connect@datasparktech.com?subject=MyHealthyGlucose%20Feedback"
+            href="mailto:connect@myhealthyglucose.com?subject=MyHealthyGlucose%20Feedback"
             className="text-sm font-medium text-teal-300 hover:text-teal-200"
           >
             Have an idea for this page? Send us feedback →

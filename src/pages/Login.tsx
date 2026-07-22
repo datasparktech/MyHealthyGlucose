@@ -54,7 +54,7 @@ export default function Login() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-                  placeholder="you@datasparktech.com"
+                  placeholder="you@myhealthyglucose.com"
                   className={inputCls}
                   disabled={!configured}
                 />

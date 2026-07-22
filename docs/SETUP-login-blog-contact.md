@@ -22,7 +22,7 @@ connected yet" message.
 
 ### 3. Create your two team accounts
 1. Go to **Authentication** → **Users** → **Add user** → **Create new user**.
-2. Create the **admin** account (e.g. `kshah@datasparktech.com`) with a password.
+2. Create the **admin** account (e.g. `connect@myhealthyglucose.com`) with a password.
    Tick "Auto Confirm User."
 3. Create the **editor** account the same way (a second email, or the same person's
    alternate email).
@@ -35,12 +35,12 @@ For each user, in **SQL Editor** run (replace the email):
 -- Make the admin
 update auth.users
 set raw_app_meta_data = raw_app_meta_data || '{"role":"admin"}'
-where email = 'kshah@datasparktech.com';
+where email = 'connect@myhealthyglucose.com';
 
 -- Make the editor
 update auth.users
 set raw_app_meta_data = raw_app_meta_data || '{"role":"editor"}'
-where email = 'editor@datasparktech.com';
+where email = 'editor@myhealthyglucose.com';
 ```
 
 > **admin** can do everything, including delete posts.
@@ -56,7 +56,7 @@ In your project: **Settings** → **API**. Copy:
 ## Part 2 — Formspree (contact form email delivery)
 
 1. Go to https://formspree.io and sign up (free tier allows 50 submissions/month).
-2. Create a new form. For the destination email, enter **connect@datasparktech.com**.
+2. Create a new form. For the destination email, enter **connect@myhealthyglucose.com**.
 3. Formspree gives you a form endpoint like `https://formspree.io/f/abcdwxyz`.
    You just need the ID at the end — `abcdwxyz`.
 4. Confirm the destination email when Formspree sends its verification.
@@ -95,4 +95,4 @@ the same three values.
   `myhealthyglucose.com/blog`.
 - **Edit/delete:** from the dashboard. (Only admin can delete.)
 - **Contact form:** anyone can use `myhealthyglucose.com/contact`; submissions email
-  straight to connect@datasparktech.com.
+  straight to connect@myhealthyglucose.com.

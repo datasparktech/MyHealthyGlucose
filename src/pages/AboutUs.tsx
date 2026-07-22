@@ -53,7 +53,7 @@ export default function AboutUs() {
 
         <Reveal delay={0.3} className="mt-16 border-t border-line pt-10 text-center">
           <p className="text-ink-dim">— The MyHealthyGlucose team, DataSpark Tech LLC</p>
-          <p className="mt-2 text-sm text-muted">DataSpark Tech LLC · connect@datasparktech.com</p>
+          <p className="mt-2 text-sm text-muted">DataSpark Tech LLC · connect@myhealthyglucose.com</p>
         </Reveal>
       </div>
     </div>

@@ -44,7 +44,7 @@ export default function Footer() {
             <p className="text-xs font-semibold uppercase tracking-wide text-muted-2">Legal</p>
             <ul className="mt-3 space-y-2 text-sm text-ink-dim">
               <li>
-                <a href="https://myhealthyglucose.datasparktech.com/privacy-policy.html" className="hover:text-teal-300">
+                <a href="https://myhealthyglucose.com/privacy-policy.html" className="hover:text-teal-300">
                   Privacy Policy
                 </a>
               </li>
