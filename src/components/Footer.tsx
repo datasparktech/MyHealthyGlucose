@@ -30,7 +30,7 @@ export default function Footer() {
               <li><Link to="/about-app" className="hover:text-teal-300">About the App</Link></li>
               <li><Link to="/about-us" className="hover:text-teal-300">About Us</Link></li>
               <li>
-                <a href="mailto:connect@datasparktech.com" className="hover:text-teal-300">Contact</a>
+                <Link to="/contact" className="hover:text-teal-300">Contact</Link>
               </li>
             </ul>
           </div>
