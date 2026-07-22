@@ -76,7 +76,7 @@ export default function Assistant() {
       setMessages((m) => [
         ...m,
         { role: "user", content: q },
-        { role: "assistant", content: faq },
+        { role: "assistant", content: `${faq.answer}\n\nSource: ${faq.source}` },
       ]);
       setInput("");
       return;
@@ -154,7 +154,7 @@ export default function Assistant() {
                     className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
                   >
                     <div
-                      className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+                      className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                         m.role === "user"
                           ? "bg-teal-500 text-bg"
                           : "bg-bg-elevated/70 text-ink-dim ring-1 ring-line"
