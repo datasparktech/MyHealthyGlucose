@@ -22,6 +22,26 @@ const CORS = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
+const ON_TOPIC = [
+  "diabet", "glucose", "sugar", "insulin", "hba1c", "a1c", "blood pressure",
+  "carb", "hypo", "hyper", "prediabet", "metformin", "glp", "sglt", "pancreas",
+  "ketone", "dka", "gestational", "type 1", "type 2", "type1", "type2",
+  "neuropath", "retinopath", "kidney", "foot", "cgm", "monitor", "glycemic",
+  "glycaemic", "diet", "food", "meal", "eat", "nutrition", "calorie", "weight",
+  "bmi", "exercise", "activity", "fasting", "medication", "medicine",
+  "symptom", "sign", "diagnos", "thirst", "urinat", "fatigue", "vision",
+  "health", "wellness", "doctor", "blood sugar", "rice", "roti", "fruit",
+  "hydration", "cholesterol", "heart", "complication", "risk", "manage", "control",
+];
+
+function isOnTopic(messages: { role: string; content: string }[]): boolean {
+  // Look at the latest user message
+  const lastUser = [...messages].reverse().find((m) => m.role === "user");
+  if (!lastUser) return false;
+  const q = String(lastUser.content).toLowerCase();
+  return ON_TOPIC.some((w) => q.includes(w));
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
 
@@ -32,6 +52,17 @@ Deno.serve(async (req) => {
         status: 400,
         headers: { ...CORS, "Content-Type": "application/json" },
       });
+    }
+
+    // Server-side topic gate — reject off-topic before spending any API credits
+    if (!isOnTopic(messages)) {
+      return new Response(
+        JSON.stringify({
+          reply:
+            "I'm set up specifically to help with questions about diabetes, blood sugar, and related health and nutrition topics. Try asking me something in that area and I'll do my best!",
+        }),
+        { headers: { ...CORS, "Content-Type": "application/json" } },
+      );
     }
 
     // Keep only the last ~10 turns to bound cost

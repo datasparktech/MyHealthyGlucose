@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
 import { supabase, isSupabaseConfigured } from "../lib/supabase";
+import { isDiabetesRelated, matchFaq } from "../data/faq";
 
 interface Msg {
   role: "user" | "assistant";
@@ -54,6 +55,33 @@ export default function Assistant() {
       return;
     }
 
+    // Topic gate — off-topic questions never reach the API (saves credits)
+    if (!isDiabetesRelated(q)) {
+      setMessages((m) => [
+        ...m,
+        { role: "user", content: q },
+        {
+          role: "assistant",
+          content:
+            "I'm set up specifically to help with questions about diabetes, blood sugar, and related health and nutrition topics — so I can't help with that one. Try asking me something about managing diabetes, food and carbs, symptoms, or staying healthy, and I'll do my best!",
+        },
+      ]);
+      setInput("");
+      return;
+    }
+
+    // FAQ-first — answer common questions instantly, no API credits used
+    const faq = matchFaq(q);
+    if (faq) {
+      setMessages((m) => [
+        ...m,
+        { role: "user", content: q },
+        { role: "assistant", content: faq },
+      ]);
+      setInput("");
+      return;
+    }
+
     const next = [...messages, { role: "user" as const, content: q }];
     setMessages(next);
     setInput("");
@@ -92,8 +120,9 @@ export default function Assistant() {
             Ask about diabetes.
           </h1>
           <p className="mx-auto mt-4 max-w-lg text-ink-dim">
-            Plain-language answers to general questions. This is educational only — it can&rsquo;t
-            give personal medical advice, diagnose, or recommend doses.
+            Plain-language answers to general questions about diabetes, blood sugar, food, and
+            health. This is educational only — it can&rsquo;t give personal medical advice,
+            diagnose, or recommend doses.
           </p>
         </Reveal>
 
