@@ -1,33 +1,37 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import GlowBackground from "./components/GlowBackground";
 import ScrollProgress from "./components/ScrollProgress";
+import Analytics from "./components/Analytics";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
-import AboutApp from "./pages/AboutApp";
-import AboutUs from "./pages/AboutUs";
-import Contact from "./pages/Contact";
-import Community from "./pages/Community";
-import Assistant from "./pages/Assistant";
-import ToolsHub from "./pages/ToolsHub";
-import InfoHub from "./pages/InfoHub";
-import Guide from "./pages/Guide";
-import Glossary from "./pages/Glossary";
-import Blog from "./pages/Blog";
-import BlogPostPage from "./pages/BlogPostPage";
-import BMICalculator from "./pages/tools/BMICalculator";
-import A1CConverter from "./pages/tools/A1CConverter";
-import CarbCalculator from "./pages/tools/CarbCalculator";
-import RiskQuiz from "./pages/tools/RiskQuiz";
-import GlycemicIndexTool from "./pages/tools/GlycemicIndexTool";
-import InsulinRatioCalculator from "./pages/tools/InsulinRatioCalculator";
-import WaterIntakeCalculator from "./pages/tools/WaterIntakeCalculator";
-import EmergencyCard from "./pages/tools/EmergencyCard";
-import Login from "./pages/Login";
-import AdminDashboard from "./pages/AdminDashboard";
-import BlogEditor from "./pages/BlogEditor";
+
+// Lazy-load everything except the home page to keep the initial bundle small
+const AboutApp = lazy(() => import("./pages/AboutApp"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Community = lazy(() => import("./pages/Community"));
+const Assistant = lazy(() => import("./pages/Assistant"));
+const Legal = lazy(() => import("./pages/Legal"));
+const ToolsHub = lazy(() => import("./pages/ToolsHub"));
+const InfoHub = lazy(() => import("./pages/InfoHub"));
+const Guide = lazy(() => import("./pages/Guide"));
+const Glossary = lazy(() => import("./pages/Glossary"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
+const BMICalculator = lazy(() => import("./pages/tools/BMICalculator"));
+const A1CConverter = lazy(() => import("./pages/tools/A1CConverter"));
+const CarbCalculator = lazy(() => import("./pages/tools/CarbCalculator"));
+const RiskQuiz = lazy(() => import("./pages/tools/RiskQuiz"));
+const GlycemicIndexTool = lazy(() => import("./pages/tools/GlycemicIndexTool"));
+const InsulinRatioCalculator = lazy(() => import("./pages/tools/InsulinRatioCalculator"));
+const WaterIntakeCalculator = lazy(() => import("./pages/tools/WaterIntakeCalculator"));
+const EmergencyCard = lazy(() => import("./pages/tools/EmergencyCard"));
+const Login = lazy(() => import("./pages/Login"));
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const BlogEditor = lazy(() => import("./pages/BlogEditor"));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,65 +41,77 @@ function ScrollToTop() {
   return null;
 }
 
+function PageLoader() {
+  return (
+    <div className="flex min-h-[60vh] items-center justify-center">
+      <div className="h-8 w-8 animate-spin rounded-full border-2 border-line border-t-teal-400" />
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <div className="min-h-screen font-body text-ink">
       <GlowBackground />
       <ScrollProgress />
+      <Analytics />
       <ScrollToTop />
       <Nav />
       <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about-app" element={<AboutApp />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/assistant" element={<Assistant />} />
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-app" element={<AboutApp />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/community" element={<Community />} />
+            <Route path="/assistant" element={<Assistant />} />
+            <Route path="/legal/:slug" element={<Legal />} />
 
-          <Route path="/tools" element={<ToolsHub />} />
-          <Route path="/tools/bmi-calculator" element={<BMICalculator />} />
-          <Route path="/tools/a1c-converter" element={<A1CConverter />} />
-          <Route path="/tools/carb-calculator" element={<CarbCalculator />} />
-          <Route path="/tools/risk-quiz" element={<RiskQuiz />} />
-          <Route path="/tools/glycemic-index" element={<GlycemicIndexTool />} />
-          <Route path="/tools/insulin-ratio" element={<InsulinRatioCalculator />} />
-          <Route path="/tools/water-intake" element={<WaterIntakeCalculator />} />
-          <Route path="/tools/emergency-guide" element={<EmergencyCard />} />
+            <Route path="/tools" element={<ToolsHub />} />
+            <Route path="/tools/bmi-calculator" element={<BMICalculator />} />
+            <Route path="/tools/a1c-converter" element={<A1CConverter />} />
+            <Route path="/tools/carb-calculator" element={<CarbCalculator />} />
+            <Route path="/tools/risk-quiz" element={<RiskQuiz />} />
+            <Route path="/tools/glycemic-index" element={<GlycemicIndexTool />} />
+            <Route path="/tools/insulin-ratio" element={<InsulinRatioCalculator />} />
+            <Route path="/tools/water-intake" element={<WaterIntakeCalculator />} />
+            <Route path="/tools/emergency-guide" element={<EmergencyCard />} />
 
-          <Route path="/info" element={<InfoHub />} />
-          <Route path="/info/glossary" element={<Glossary />} />
-          <Route path="/info/:slug" element={<Guide />} />
+            <Route path="/info" element={<InfoHub />} />
+            <Route path="/info/glossary" element={<Glossary />} />
+            <Route path="/info/:slug" element={<Guide />} />
 
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
 
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute>
-                <AdminDashboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/new"
-            element={
-              <ProtectedRoute>
-                <BlogEditor />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/edit/:id"
-            element={
-              <ProtectedRoute>
-                <BlogEditor />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/new"
+              element={
+                <ProtectedRoute>
+                  <BlogEditor />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/edit/:id"
+              element={
+                <ProtectedRoute>
+                  <BlogEditor />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </div>

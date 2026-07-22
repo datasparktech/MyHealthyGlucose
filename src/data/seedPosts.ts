@@ -184,6 +184,78 @@ Very few foods are truly off-limits. What usually matters more is *how much* and
 
 *Carb counting for insulin dosing should always be guided by your care team. This article is general education only.*`,
   },
+  {
+    slug: "exercise-and-diabetes",
+    title: "Exercise and Diabetes: Moving in the Right Direction",
+    excerpt:
+      "Physical activity is one of the most powerful tools for managing blood sugar. Here's how it works and how to start safely.",
+    category: "Tips",
+    cover_url: IMAGES.healthyBowl,
+    created_at: "2026-07-18T09:00:00Z",
+    content: `Exercise is sometimes called a "free medicine" for diabetes — and for good reason. It helps in ways that surprise many people.
+
+## Why movement helps
+
+When you're active, your muscles use glucose for energy, pulling it out of your bloodstream. Activity also makes your body **more sensitive to insulin**, so it works better for hours afterward. Over time, regular activity supports weight management, heart health, mood, and sleep — all of which feed back into better blood sugar.
+
+## How much is enough?
+
+General guidance is around **150 minutes of moderate activity per week** — that's about 30 minutes, five days a week — plus a couple of sessions of strength work. But you don't have to start there. Even a **short walk after meals** can noticeably blunt the post-meal glucose rise.
+
+## Finding what you'll actually do
+
+The best exercise is the one you'll keep doing. Walking, cycling, swimming, dancing, gardening, yoga — it all counts. Consistency matters far more than intensity.
+
+## A note on safety
+
+If you take insulin or certain medications, exercise can sometimes cause low blood sugar, occasionally hours later. A few sensible habits:
+
+- Check your blood sugar before and after until you know your patterns.
+- Keep fast-acting carbs handy in case of a low.
+- Stay hydrated.
+- Talk to your care team before starting a big new routine, especially if you have complications.
+
+## Start small, build up
+
+You don't need a gym membership or a dramatic overhaul. Park farther away, take the stairs, walk after dinner. Small, repeated choices compound into real results.
+
+*Always check with your doctor before starting a new exercise program, particularly if you have heart, eye, foot, or nerve complications.*`,
+  },
+  {
+    slug: "understanding-blood-sugar-numbers",
+    title: "Making Sense of Your Blood Sugar Numbers",
+    excerpt:
+      "mg/dL, mmol/L, A1C, time-in-range — the numbers can feel like alphabet soup. Here's what each one actually means.",
+    category: "Tips",
+    cover_url: IMAGES.mealPrep,
+    created_at: "2026-07-17T09:00:00Z",
+    content: `When you're managing diabetes, numbers come at you from every direction. Let's make sense of the ones that matter most.
+
+## Blood glucose (the moment-to-moment number)
+
+This is your blood sugar right now, measured either by a finger-prick meter or a continuous glucose monitor (CGM). It's shown in one of two units depending on where you live:
+
+- **mg/dL** (milligrams per deciliter) — used in the US and some other countries
+- **mmol/L** (millimoles per liter) — used in much of the world
+
+General targets for many nonpregnant adults are **80–130 mg/dL before meals** and **under 180 mg/dL** a couple of hours after eating — but your personal targets should come from your care team.
+
+## HbA1c (the long-term average)
+
+Your **A1C** reflects your average blood glucose over roughly the past three months, shown as a percentage. Because it smooths out daily ups and downs, it gives a big-picture view. A common goal for many adults is **below 7%**, though this varies by person.
+
+Curious how an A1C translates to an everyday glucose number? Our [A1C converter](/tools/a1c-converter) does the math.
+
+## Time-in-range (the quality measure)
+
+Two people can have the same A1C but very different daily experiences — one steady, one swinging between highs and lows. **Time-in-range** captures that difference: it's the percentage of time you spend in a target band (usually 70–180 mg/dL). A common goal is **over 70%**.
+
+## Putting them together
+
+Think of it this way: blood glucose is the snapshot, A1C is the long-term average, and time-in-range is the day-to-day quality. Watching all three gives you a fuller, fairer picture than any single number alone.
+
+*These are general reference points, not personal targets. Your care team will set goals that fit your situation.*`,
+  },
 ];
 
 export function getSeedPost(slug: string) {

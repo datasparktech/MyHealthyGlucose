@@ -44,9 +44,19 @@ export default function Footer() {
             <p className="text-xs font-semibold uppercase tracking-wide text-muted-2">Legal</p>
             <ul className="mt-3 space-y-2 text-sm text-ink-dim">
               <li>
-                <a href="https://myhealthyglucose.com/privacy-policy.html" className="hover:text-teal-300">
+                <Link to="/legal/privacy" className="hover:text-teal-300">
                   Privacy Policy
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link to="/legal/terms" className="hover:text-teal-300">
+                  Terms of Use
+                </Link>
+              </li>
+              <li>
+                <Link to="/legal/disclaimer" className="hover:text-teal-300">
+                  Medical Disclaimer
+                </Link>
               </li>
             </ul>
           </div>
