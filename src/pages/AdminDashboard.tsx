@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { fetchAllPosts, deletePost, type BlogPost } from "../lib/blog";
+import {
+  fetchPendingTestimonials,
+  approveTestimonial,
+  deleteTestimonial,
+  type Testimonial,
+} from "../lib/community";
 import Reveal from "../components/Reveal";
 
 export default function AdminDashboard() {
@@ -10,11 +16,17 @@ export default function AdminDashboard() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
+  const [pending, setPending] = useState<Testimonial[]>([]);
 
   async function load() {
     try {
       setLoading(true);
       setPosts(await fetchAllPosts());
+      try {
+        setPending(await fetchPendingTestimonials());
+      } catch {
+        // testimonials table may not exist yet — ignore
+      }
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Failed to load posts");
     } finally {
@@ -31,6 +43,17 @@ export default function AdminDashboard() {
     if (!confirm(`Delete "${title}"? This can't be undone.`)) return;
     await deletePost(id);
     load();
+  }
+
+  async function handleApprove(id: string) {
+    await approveTestimonial(id);
+    setPending((p) => p.filter((t) => t.id !== id));
+  }
+
+  async function handleReject(id: string) {
+    if (!confirm("Reject and delete this testimonial?")) return;
+    await deleteTestimonial(id);
+    setPending((p) => p.filter((t) => t.id !== id));
   }
 
   return (
@@ -133,6 +156,49 @@ export default function AdminDashboard() {
             </div>
           )}
         </Reveal>
+
+        {pending.length > 0 && (
+          <Reveal delay={0.15} className="mt-14">
+            <div className="flex items-center gap-3">
+              <h2 className="font-display text-2xl font-semibold text-ink">
+                Pending testimonials
+              </h2>
+              <span className="rounded-full bg-orange-500/15 px-2.5 py-1 text-[11px] font-semibold text-orange-300 ring-1 ring-orange-400/25">
+                {pending.length} awaiting review
+              </span>
+            </div>
+            <p className="mt-2 text-sm text-muted">
+              These won&rsquo;t appear on the public Community page until you approve them.
+            </p>
+            <div className="mt-6 space-y-3">
+              {pending.map((t) => (
+                <div key={t.id} className="glass rounded-2xl p-5">
+                  <blockquote className="text-ink-dim">“{t.quote}”</blockquote>
+                  <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+                    <p className="text-sm">
+                      <span className="font-semibold text-ink">{t.name}</span>
+                      {t.location && <span className="text-muted"> · {t.location}</span>}
+                    </p>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => handleApprove(t.id)}
+                        className="rounded-lg bg-teal-500 px-4 py-2 text-sm font-semibold text-bg transition-transform hover:scale-105 hover:bg-teal-400"
+                      >
+                        Approve
+                      </button>
+                      <button
+                        onClick={() => handleReject(t.id)}
+                        className="rounded-lg bg-card px-4 py-2 text-sm font-medium text-muted transition-colors hover:text-orange-300"
+                      >
+                        Reject
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        )}
       </div>
     </div>
   );

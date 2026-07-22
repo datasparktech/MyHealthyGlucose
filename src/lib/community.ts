@@ -97,3 +97,25 @@ export async function submitTestimonial(name: string, location: string, quote: s
   const { error } = await supabase.from("testimonials").insert({ name, location, quote });
   return { error: error ? error.message : null };
 }
+
+// ---------- testimonials: admin ----------
+export async function fetchPendingTestimonials(): Promise<Testimonial[]> {
+  if (!supabase) return [];
+  const { data, error } = await supabase
+    .from("testimonials")
+    .select("*")
+    .eq("approved", false)
+    .order("created_at", { ascending: false });
+  if (error) throw error;
+  return data ?? [];
+}
+
+export async function approveTestimonial(id: string) {
+  if (!supabase) return;
+  await supabase.from("testimonials").update({ approved: true }).eq("id", id);
+}
+
+export async function deleteTestimonial(id: string) {
+  if (!supabase) return;
+  await supabase.from("testimonials").delete().eq("id", id);
+}

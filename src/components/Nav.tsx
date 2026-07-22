@@ -8,9 +8,9 @@ const links = [
   { to: "/tools", label: "Tools" },
   { to: "/info", label: "Info Hub" },
   { to: "/blog", label: "Blog" },
+  { to: "/assistant", label: "Ask AI" },
   { to: "/community", label: "Community" },
   { to: "/about-app", label: "The App" },
-  { to: "/about-us", label: "About" },
   { to: "/contact", label: "Contact" },
 ];
 

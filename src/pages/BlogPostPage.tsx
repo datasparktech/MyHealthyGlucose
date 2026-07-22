@@ -7,6 +7,7 @@ import { isSupabaseConfigured } from "../lib/supabase";
 import { getSeedPost } from "../data/seedPosts";
 import Reveal from "../components/Reveal";
 import Disclaimer from "../components/Disclaimer";
+import Seo from "../components/Seo";
 
 export default function BlogPostPage() {
   const { slug } = useParams();
@@ -65,6 +66,12 @@ export default function BlogPostPage() {
 
   return (
     <article className="px-6 py-14">
+      <Seo
+        title={post.title}
+        description={post.excerpt}
+        path={`/blog/${post.slug}`}
+        image={post.cover_url ?? undefined}
+      />
       <div className="mx-auto max-w-2xl">
         <Reveal>
           <Link to="/blog" className="text-sm font-medium text-muted hover:text-teal-300">

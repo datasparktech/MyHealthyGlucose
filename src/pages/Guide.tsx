@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import Disclaimer from "../components/Disclaimer";
+import Seo from "../components/Seo";
 import { getGuide, GUIDES } from "../data/guides";
 
 export default function Guide() {
@@ -13,6 +14,11 @@ export default function Guide() {
 
   return (
     <article className="px-6 py-14">
+      <Seo
+        title={guide.title}
+        description={guide.summary}
+        path={`/info/${guide.slug}`}
+      />
       <div className="mx-auto max-w-2xl">
         <Reveal>
           <Link

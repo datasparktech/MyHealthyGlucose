@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import NewsletterSignup from "./NewsletterSignup";
 
 export default function Footer() {
   return (
     <footer className="border-t border-line px-6 py-14">
+      <div className="mx-auto mb-12 max-w-7xl">
+        <NewsletterSignup />
+      </div>
+
       <div className="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:justify-between">
         <div className="max-w-xs">
           <div className="flex items-center gap-2.5">
