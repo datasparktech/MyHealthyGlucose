@@ -1,24 +1,23 @@
 import { useEffect } from "react";
 
 /**
- * Privacy-friendly, cookieless analytics via Plausible.
- * Activates only when VITE_PLAUSIBLE_DOMAIN is set (e.g. "myhealthyglucose.com").
- * No cookies, no personal data, no cookie banner required.
+ * Free, privacy-friendly, cookieless analytics via Cloudflare Web Analytics.
+ * Activates only when VITE_CF_ANALYTICS_TOKEN is set.
+ * No cookies, no personal data, no cookie banner required, and free.
  * If unset, this renders nothing and no script loads.
  */
 export default function Analytics() {
-  const domain = import.meta.env.VITE_PLAUSIBLE_DOMAIN as string | undefined;
+  const token = import.meta.env.VITE_CF_ANALYTICS_TOKEN as string | undefined;
 
   useEffect(() => {
-    if (!domain) return;
-    if (document.querySelector("script[data-plausible]")) return;
+    if (!token) return;
+    if (document.querySelector("script[data-cf-beacon]")) return;
     const s = document.createElement("script");
     s.defer = true;
-    s.setAttribute("data-domain", domain);
-    s.setAttribute("data-plausible", "true");
-    s.src = "https://plausible.io/js/script.js";
+    s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    s.setAttribute("data-cf-beacon", JSON.stringify({ token }));
     document.head.appendChild(s);
-  }, [domain]);
+  }, [token]);
 
   return null;
 }

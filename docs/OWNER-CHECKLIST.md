@@ -39,11 +39,16 @@ Run each file's contents in **Supabase → SQL Editor → New query → paste �
 - [ ] **Set an Anthropic spending cap** at console.anthropic.com → Limits
       (Protects against runaway costs — important since the function is public.)
 
-## 3. Analytics (optional, ~5 min)
-- [ ] Create a Plausible account (plausible.io) and add site `myhealthyglucose.com`
-- [ ] Add GitHub Actions **Variable**: `VITE_PLAUSIBLE_DOMAIN` = `myhealthyglucose.com`
-- [ ] Redeploy; confirm your visit shows in the Plausible dashboard
-      (Prefer free? Ask to switch the integration to Cloudflare Web Analytics.)
+## 3. Analytics (optional, free, ~5 min)
+Cloudflare Web Analytics — free, cookieless, no cookie banner needed.
+- [ ] Go to dash.cloudflare.com → **Web Analytics** → **Add a site**
+- [ ] Enter `myhealthyglucose.com`. Cloudflare gives you a **site token**
+      (a string in the snippet, shown as `token: "..."`)
+- [ ] Add GitHub Actions **Variable**: `VITE_CF_ANALYTICS_TOKEN` = that token
+- [ ] Redeploy; visit the site, then check the Cloudflare Web Analytics
+      dashboard for your visit
+      (Note: you do NOT need to move your domain's DNS to Cloudflare — the
+      free "add a site" beacon method works on any host, including GitHub Pages.)
 
 ## 4. Legal review (recommended for a health brand)
 - [ ] Have a lawyer review the Privacy Policy, Terms of Use, and Medical
