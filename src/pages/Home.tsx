@@ -4,6 +4,7 @@ import Features from "../components/Features";
 import PhotoBands from "../components/PhotoBands";
 import AppShowcase from "../components/AppShowcase";
 import HowItWorks from "../components/HowItWorks";
+import AppLandingZone from "../components/AppLandingZone";
 import CTASection from "../components/CTASection";
 import Seo from "../components/Seo";
 
@@ -21,6 +22,7 @@ export default function Home() {
       <PhotoBands />
       <AppShowcase />
       <HowItWorks />
+      <AppLandingZone />
       <CTASection />
     </>
   );

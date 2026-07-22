@@ -35,6 +35,30 @@ const tools = [
     body: "See how fast a food raises blood sugar — and the glycemic load for a real serving size.",
   },
   {
+    to: "/tools/meal-simulator",
+    icon: "🍽️",
+    title: "Meal Glycemic Simulator",
+    body: "Build a full meal and see its estimated glucose impact, with smart lower-GI swaps.",
+  },
+  {
+    to: "/tools/cgm-analyzer",
+    icon: "📁",
+    title: "CGM Data Visualizer",
+    body: "Drop in a Dexcom/Libre CSV to see your glucose curve and time-in-range — 100% private.",
+  },
+  {
+    to: "/tools/carb-target",
+    icon: "🎯",
+    title: "Daily Carb & Fiber Target",
+    body: "Estimate your daily carbohydrate and fiber targets from your calorie intake.",
+  },
+  {
+    to: "/tools/post-meal-target",
+    icon: "⏱️",
+    title: "Post-Meal Target Finder",
+    body: "See the general after-meal glucose targets and check a reading against them.",
+  },
+  {
     to: "/tools/insulin-ratio",
     icon: "💉",
     title: "Insulin-to-Carb Ratio",

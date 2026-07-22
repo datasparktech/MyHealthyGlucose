@@ -29,6 +29,10 @@ const GlycemicIndexTool = lazy(() => import("./pages/tools/GlycemicIndexTool"));
 const InsulinRatioCalculator = lazy(() => import("./pages/tools/InsulinRatioCalculator"));
 const WaterIntakeCalculator = lazy(() => import("./pages/tools/WaterIntakeCalculator"));
 const EmergencyCard = lazy(() => import("./pages/tools/EmergencyCard"));
+const MealSimulator = lazy(() => import("./pages/tools/MealSimulator"));
+const CGMAnalyzer = lazy(() => import("./pages/tools/CGMAnalyzer"));
+const CarbTargetCalculator = lazy(() => import("./pages/tools/CarbTargetCalculator"));
+const PostMealTarget = lazy(() => import("./pages/tools/PostMealTarget"));
 const Login = lazy(() => import("./pages/Login"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const BlogEditor = lazy(() => import("./pages/BlogEditor"));
@@ -77,6 +81,10 @@ export default function App() {
             <Route path="/tools/insulin-ratio" element={<InsulinRatioCalculator />} />
             <Route path="/tools/water-intake" element={<WaterIntakeCalculator />} />
             <Route path="/tools/emergency-guide" element={<EmergencyCard />} />
+            <Route path="/tools/meal-simulator" element={<MealSimulator />} />
+            <Route path="/tools/cgm-analyzer" element={<CGMAnalyzer />} />
+            <Route path="/tools/carb-target" element={<CarbTargetCalculator />} />
+            <Route path="/tools/post-meal-target" element={<PostMealTarget />} />
 
             <Route path="/info" element={<InfoHub />} />
             <Route path="/info/glossary" element={<Glossary />} />
