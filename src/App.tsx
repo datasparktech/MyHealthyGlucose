@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import AboutApp from "./pages/AboutApp";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
+import Community from "./pages/Community";
 import ToolsHub from "./pages/ToolsHub";
 import InfoHub from "./pages/InfoHub";
 import Guide from "./pages/Guide";
@@ -44,6 +45,7 @@ export default function App() {
           <Route path="/about-app" element={<AboutApp />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/community" element={<Community />} />
 
           <Route path="/tools" element={<ToolsHub />} />
           <Route path="/tools/bmi-calculator" element={<BMICalculator />} />

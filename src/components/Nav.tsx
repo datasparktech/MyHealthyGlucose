@@ -7,8 +7,9 @@ const links = [
   { to: "/tools", label: "Tools" },
   { to: "/info", label: "Info Hub" },
   { to: "/blog", label: "Blog" },
-  { to: "/about-app", label: "About the App" },
-  { to: "/about-us", label: "About Us" },
+  { to: "/community", label: "Community" },
+  { to: "/about-app", label: "The App" },
+  { to: "/about-us", label: "About" },
   { to: "/contact", label: "Contact" },
 ];
 

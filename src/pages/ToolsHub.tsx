@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
+import { IMAGES } from "../data/images";
 
 const tools = [
   {
@@ -44,6 +45,21 @@ export default function ToolsHub() {
             Fast, free, and no login required. Every tool works anonymously — nothing you enter
             is stored.
           </p>
+        </Reveal>
+
+        <Reveal delay={0.08} className="mt-10">
+          <div className="relative overflow-hidden rounded-[1.75rem] ring-1 ring-line">
+            <img
+              src={IMAGES.mealPrep}
+              alt="Healthy meal-prep containers with balanced portions"
+              loading="lazy"
+              className="h-48 w-full object-cover sm:h-60"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent" />
+            <p className="absolute bottom-5 left-6 right-6 font-display text-lg font-semibold text-ink sm:text-xl">
+              Plan meals, count carbs, and understand your numbers — in a couple of taps.
+            </p>
+          </div>
         </Reveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2">
