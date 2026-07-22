@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MyHealthyGlucose</title>
+    <script>
+      // GitHub Pages SPA redirect: preserve the path and hand off to index.html
+      // so React Router can handle client-side routes on direct visits/refreshes.
+      (function () {
+        var path = window.location.pathname + window.location.search + window.location.hash;
+        sessionStorage.setItem('spa-redirect', path);
+        window.location.replace('/');
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
