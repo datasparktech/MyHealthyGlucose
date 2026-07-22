@@ -6,9 +6,13 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import AboutApp from "./pages/AboutApp";
 import AboutUs from "./pages/AboutUs";
-import Tools from "./pages/Tools";
+import ToolsHub from "./pages/ToolsHub";
 import InfoHub from "./pages/InfoHub";
 import Blog from "./pages/Blog";
+import BMICalculator from "./pages/tools/BMICalculator";
+import A1CConverter from "./pages/tools/A1CConverter";
+import CarbCalculator from "./pages/tools/CarbCalculator";
+import RiskQuiz from "./pages/tools/RiskQuiz";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,7 +33,11 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about-app" element={<AboutApp />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/tools" element={<Tools />} />
+          <Route path="/tools" element={<ToolsHub />} />
+          <Route path="/tools/bmi-calculator" element={<BMICalculator />} />
+          <Route path="/tools/a1c-converter" element={<A1CConverter />} />
+          <Route path="/tools/carb-calculator" element={<CarbCalculator />} />
+          <Route path="/tools/risk-quiz" element={<RiskQuiz />} />
           <Route path="/info" element={<InfoHub />} />
           <Route path="/blog" element={<Blog />} />
         </Routes>
