@@ -8,6 +8,8 @@ import AboutApp from "./pages/AboutApp";
 import AboutUs from "./pages/AboutUs";
 import ToolsHub from "./pages/ToolsHub";
 import InfoHub from "./pages/InfoHub";
+import Guide from "./pages/Guide";
+import Glossary from "./pages/Glossary";
 import Blog from "./pages/Blog";
 import BMICalculator from "./pages/tools/BMICalculator";
 import A1CConverter from "./pages/tools/A1CConverter";
@@ -39,6 +41,8 @@ export default function App() {
           <Route path="/tools/carb-calculator" element={<CarbCalculator />} />
           <Route path="/tools/risk-quiz" element={<RiskQuiz />} />
           <Route path="/info" element={<InfoHub />} />
+          <Route path="/info/glossary" element={<Glossary />} />
+          <Route path="/info/:slug" element={<Guide />} />
           <Route path="/blog" element={<Blog />} />
         </Routes>
       </main>
