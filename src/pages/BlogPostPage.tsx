@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { fetchPostBySlug, type BlogPost } from "../lib/blog";
 import { isSupabaseConfigured } from "../lib/supabase";
+import { getSeedPost } from "../data/seedPosts";
 import Reveal from "../components/Reveal";
 import Disclaimer from "../components/Disclaimer";
 
@@ -14,7 +15,31 @@ export default function BlogPostPage() {
   const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
-    if (!isSupabaseConfigured || !slug) {
+    if (!slug) {
+      setLoading(false);
+      setNotFound(true);
+      return;
+    }
+    // Built-in seed posts render even without the database
+    const seed = getSeedPost(slug);
+    if (seed) {
+      setPost({
+        id: seed.slug,
+        slug: seed.slug,
+        title: seed.title,
+        excerpt: seed.excerpt,
+        content: seed.content,
+        cover_url: seed.cover_url,
+        category: seed.category,
+        author_email: null,
+        published: true,
+        created_at: seed.created_at,
+        updated_at: seed.created_at,
+      });
+      setLoading(false);
+      return;
+    }
+    if (!isSupabaseConfigured) {
       setLoading(false);
       setNotFound(true);
       return;

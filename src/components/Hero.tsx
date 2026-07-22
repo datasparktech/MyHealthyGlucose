@@ -22,7 +22,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display text-5xl font-semibold leading-[1.05] tracking-tight text-ink md:text-6xl"
+            className="font-display text-[2rem] font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-6xl"
           >
             Diabetes care that finally{" "}
             <span className="text-gradient-brand">speaks your food&rsquo;s language.</span>

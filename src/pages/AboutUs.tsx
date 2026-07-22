@@ -1,4 +1,5 @@
 import Reveal from "../components/Reveal";
+import { IMAGES } from "../data/images";
 
 export default function AboutUs() {
   return (
@@ -26,6 +27,15 @@ export default function AboutUs() {
             done shallowly. Everything we build is about doing that same thing for more of the
             world, one cuisine at a time, without cutting corners to get there faster.
           </p>
+        </Reveal>
+
+        <Reveal delay={0.2} className="mt-10 overflow-hidden rounded-[1.75rem] ring-1 ring-line">
+          <img
+            src={IMAGES.indianThali}
+            alt="A traditional Indian thali"
+            loading="lazy"
+            className="aspect-[16/9] w-full object-cover"
+          />
         </Reveal>
 
         <Reveal delay={0.25} className="mt-14 grid gap-4 sm:grid-cols-3">

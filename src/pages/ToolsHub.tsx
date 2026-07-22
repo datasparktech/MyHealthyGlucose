@@ -28,6 +28,30 @@ const tools = [
     title: "Diabetes Risk Quiz",
     body: "Six quick questions on the risk factors clinicians look at — a prompt to see a doctor.",
   },
+  {
+    to: "/tools/glycemic-index",
+    icon: "📈",
+    title: "Glycemic Index & Load",
+    body: "See how fast a food raises blood sugar — and the glycemic load for a real serving size.",
+  },
+  {
+    to: "/tools/insulin-ratio",
+    icon: "💉",
+    title: "Insulin-to-Carb Ratio",
+    body: "Estimate a mealtime insulin dose from your carb ratio and correction factor.",
+  },
+  {
+    to: "/tools/water-intake",
+    icon: "💧",
+    title: "Hydration Calculator",
+    body: "A daily water target based on your weight and activity level.",
+  },
+  {
+    to: "/tools/emergency-guide",
+    icon: "🚨",
+    title: "Emergency Guide",
+    body: "Clear, printable steps for high and low blood sugar emergencies.",
+  },
 ];
 
 export default function ToolsHub() {
@@ -89,7 +113,8 @@ export default function ToolsHub() {
 
         <Reveal delay={0.2} className="mt-12 text-center">
           <p className="text-sm text-muted">
-            More coming — insulin-to-carb ratio, glycemic index lookup, and a full food database.
+            More tools are added regularly — have one in mind?{" "}
+            <a href="/contact" className="text-teal-300 hover:text-teal-200">Suggest it →</a>
           </p>
         </Reveal>
       </div>

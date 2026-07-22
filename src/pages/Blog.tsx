@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchPublishedPosts, type BlogPost } from "../lib/blog";
 import { isSupabaseConfigured } from "../lib/supabase";
+import { SEED_POSTS, type SeedPost } from "../data/seedPosts";
 import Reveal from "../components/Reveal";
 
+type AnyPost = (BlogPost | SeedPost) & { cover_url: string | null };
+
 export default function Blog() {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [dbPosts, setDbPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,10 +17,15 @@ export default function Blog() {
       return;
     }
     fetchPublishedPosts()
-      .then(setPosts)
-      .catch(() => setPosts([]))
+      .then(setDbPosts)
+      .catch(() => setDbPosts([]))
       .finally(() => setLoading(false));
   }, []);
+
+  // Merge DB posts (first) with built-in seed posts, newest first
+  const all: AnyPost[] = [...dbPosts, ...SEED_POSTS].sort(
+    (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
+  );
 
   return (
     <div className="px-6 py-16">
@@ -38,14 +46,10 @@ export default function Blog() {
             <div className="flex justify-center py-20">
               <div className="h-8 w-8 animate-spin rounded-full border-2 border-line border-t-teal-400" />
             </div>
-          ) : posts.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-line px-6 py-16 text-center">
-              <p className="text-muted">No posts published yet — check back soon.</p>
-            </div>
           ) : (
             <div className="grid gap-6 sm:grid-cols-2">
-              {posts.map((p, i) => (
-                <Reveal key={p.id} delay={i * 0.06}>
+              {all.map((p, i) => (
+                <Reveal key={p.slug} delay={i * 0.06}>
                   <Link
                     to={`/blog/${p.slug}`}
                     className="group glass flex h-full flex-col overflow-hidden rounded-2xl transition-colors duration-300 hover:bg-card-hover"
@@ -55,6 +59,7 @@ export default function Blog() {
                         <img
                           src={p.cover_url}
                           alt=""
+                          loading="lazy"
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import { GUIDES } from "../data/guides";
+import { IMAGES } from "../data/images";
 
 const categoryColors: Record<string, string> = {
   Basics: "text-teal-300 bg-teal-500/10 ring-teal-400/20",
@@ -25,6 +26,18 @@ export default function InfoHub() {
             Plain-language guides on the questions that come up most — written to be understood,
             not to impress. Educational only, never a substitute for your doctor.
           </p>
+        </Reveal>
+
+        <Reveal delay={0.08} className="mt-10">
+          <div className="relative overflow-hidden rounded-[1.75rem] ring-1 ring-line">
+            <img
+              src={IMAGES.doctorPatient}
+              alt="A doctor explaining results to a patient"
+              loading="lazy"
+              className="h-48 w-full object-cover sm:h-56"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/30 to-transparent" />
+          </div>
         </Reveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2">

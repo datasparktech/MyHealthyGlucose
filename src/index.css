@@ -45,6 +45,13 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Prevent long words / headings from overflowing on narrow screens */
+h1, h2, h3, p {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 ::selection {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { useAuth } from "../context/AuthContext";
 import logo from "../assets/logo.png";
 
 const links = [
@@ -17,6 +18,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const { user } = useAuth();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -66,6 +68,12 @@ export default function Nav() {
         </div>
 
         <div className="flex items-center gap-3">
+          <Link
+            to={user ? "/admin" : "/login"}
+            className="hidden text-sm font-medium text-ink-dim transition-colors hover:text-teal-300 lg:inline-block"
+          >
+            {user ? "Dashboard" : "Login"}
+          </Link>
           <a
             href="https://play.google.com/store/apps/details?id=com.glucosecompass.app"
             target="_blank"
@@ -134,6 +142,12 @@ export default function Nav() {
               >
                 Get the app
               </a>
+              <Link
+                to={user ? "/admin" : "/login"}
+                className="rounded-lg px-3 py-2.5 text-sm font-medium text-ink-dim transition-colors hover:bg-card-hover hover:text-ink"
+              >
+                {user ? "Dashboard" : "Team login"}
+              </Link>
             </div>
           </motion.div>
         )}

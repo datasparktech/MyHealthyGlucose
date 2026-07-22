@@ -20,6 +20,10 @@ import BMICalculator from "./pages/tools/BMICalculator";
 import A1CConverter from "./pages/tools/A1CConverter";
 import CarbCalculator from "./pages/tools/CarbCalculator";
 import RiskQuiz from "./pages/tools/RiskQuiz";
+import GlycemicIndexTool from "./pages/tools/GlycemicIndexTool";
+import InsulinRatioCalculator from "./pages/tools/InsulinRatioCalculator";
+import WaterIntakeCalculator from "./pages/tools/WaterIntakeCalculator";
+import EmergencyCard from "./pages/tools/EmergencyCard";
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
 import BlogEditor from "./pages/BlogEditor";
@@ -52,6 +56,10 @@ export default function App() {
           <Route path="/tools/a1c-converter" element={<A1CConverter />} />
           <Route path="/tools/carb-calculator" element={<CarbCalculator />} />
           <Route path="/tools/risk-quiz" element={<RiskQuiz />} />
+          <Route path="/tools/glycemic-index" element={<GlycemicIndexTool />} />
+          <Route path="/tools/insulin-ratio" element={<InsulinRatioCalculator />} />
+          <Route path="/tools/water-intake" element={<WaterIntakeCalculator />} />
+          <Route path="/tools/emergency-guide" element={<EmergencyCard />} />
 
           <Route path="/info" element={<InfoHub />} />
           <Route path="/info/glossary" element={<Glossary />} />
