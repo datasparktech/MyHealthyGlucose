@@ -22,6 +22,9 @@ const ToolsHub = lazy(() => import("./pages/ToolsHub"));
 const InfoHub = lazy(() => import("./pages/InfoHub"));
 const Guide = lazy(() => import("./pages/Guide"));
 const Glossary = lazy(() => import("./pages/Glossary"));
+const HowInsulinWorks = lazy(() => import("./pages/explainers/HowInsulinWorks"));
+const DigestionAndGlucose = lazy(() => import("./pages/explainers/DigestionAndGlucose"));
+const Type1VsType2 = lazy(() => import("./pages/explainers/Type1VsType2"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const BMICalculator = lazy(() => import("./pages/tools/BMICalculator"));
@@ -96,6 +99,9 @@ export default function App() {
 
             <Route path="/info" element={<InfoHub />} />
             <Route path="/info/glossary" element={<Glossary />} />
+            <Route path="/info/how-insulin-works" element={<HowInsulinWorks />} />
+            <Route path="/info/digestion-and-glucose" element={<DigestionAndGlucose />} />
+            <Route path="/info/type-1-vs-type-2" element={<Type1VsType2 />} />
             <Route path="/info/:slug" element={<Guide />} />
 
             <Route path="/blog" element={<Blog />} />

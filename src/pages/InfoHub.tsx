@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import { GUIDES } from "../data/guides";
+import { EXPLAINERS } from "../data/explainers";
 import { IMAGES } from "../data/images";
 
 const categoryColors: Record<string, string> = {
@@ -68,6 +69,30 @@ export default function InfoHub() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.15} className="mt-14">
+          <h2 className="font-display text-2xl font-semibold text-ink">🎬 Visual Explainers</h2>
+          <p className="mt-2 text-sm text-muted">
+            Interactive, step-by-step diagrams for the concepts that are easier to see than read.
+          </p>
+          <div className="mt-5 grid gap-5 sm:grid-cols-3">
+            {EXPLAINERS.map((e, i) => (
+              <Reveal key={e.slug} delay={i * 0.07}>
+                <Link
+                  to={`/info/${e.slug}`}
+                  className="group glass flex h-full flex-col rounded-2xl p-6 transition-colors duration-300 hover:bg-card-hover"
+                >
+                  <span className="text-3xl">{e.icon}</span>
+                  <h3 className="mt-3 font-display text-base font-semibold text-ink">{e.title}</h3>
+                  <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted">{e.summary}</p>
+                  <span className="mt-3 text-sm font-medium text-teal-300 transition-transform group-hover:translate-x-1">
+                    Explore →
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </Reveal>
 
         <Reveal delay={0.2} className="mt-8">
           <Link
