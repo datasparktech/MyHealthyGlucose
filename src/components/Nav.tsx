@@ -1,24 +1,27 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { useAuth } from "../context/AuthContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 import logo from "../assets/logo.png";
-
-const links = [
-  { to: "/tools", label: "Tools" },
-  { to: "/info", label: "Info Hub" },
-  { to: "/blog", label: "Blog" },
-  { to: "/assistant", label: "Ask AI" },
-  { to: "/community", label: "Community" },
-  { to: "/features", label: "Features" },
-  { to: "/contact", label: "Contact" },
-];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
   const { user } = useAuth();
+  const { t } = useTranslation();
+
+  const links = [
+    { to: "/tools", label: t("nav.tools") },
+    { to: "/info", label: t("nav.infoHub") },
+    { to: "/blog", label: t("nav.blog") },
+    { to: "/assistant", label: t("nav.askAI") },
+    { to: "/community", label: t("nav.community") },
+    { to: "/features", label: t("nav.features") },
+    { to: "/store", label: t("nav.store") },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -51,7 +54,7 @@ export default function Nav() {
           </div>
         </Link>
 
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {links.map((l) => (
             <NavLink
               key={l.to}
@@ -67,12 +70,15 @@ export default function Nav() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
+          <div className="hidden lg:block">
+            <LanguageSwitcher compact />
+          </div>
           <Link
             to={user ? "/admin" : "/login"}
             className="hidden text-sm font-medium text-ink-dim transition-colors hover:text-teal-300 lg:inline-block"
           >
-            {user ? "Dashboard" : "Login"}
+            {user ? t("nav.dashboard") : t("nav.login")}
           </Link>
           <a
             href="https://play.google.com/store/apps/details?id=com.glucosecompass.app"
@@ -80,7 +86,7 @@ export default function Nav() {
             rel="noreferrer"
             className="hidden rounded-full bg-teal-500 px-4 py-2 text-sm font-semibold text-bg transition-transform hover:scale-105 hover:bg-teal-400 sm:inline-block"
           >
-            Get the app
+            {t("nav.getApp")}
           </a>
 
           {/* Mobile menu toggle */}
@@ -140,14 +146,17 @@ export default function Nav() {
                 rel="noreferrer"
                 className="mt-2 rounded-full bg-teal-500 px-4 py-2.5 text-center text-sm font-semibold text-bg sm:hidden"
               >
-                Get the app
+                {t("nav.getApp")}
               </a>
               <Link
                 to={user ? "/admin" : "/login"}
                 className="rounded-lg px-3 py-2.5 text-sm font-medium text-ink-dim transition-colors hover:bg-card-hover hover:text-ink"
               >
-                {user ? "Dashboard" : "Team login"}
+                {user ? t("nav.dashboard") : t("nav.teamLogin")}
               </Link>
+              <div className="mt-1 border-t border-line px-3 pt-3">
+                <LanguageSwitcher />
+              </div>
             </div>
           </motion.div>
         )}

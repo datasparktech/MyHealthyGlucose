@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import GlucoseCard from "./GlucoseCard";
 
 const cuisines = ["दाल · Dal", "Phở", "Adobo", "شاورما · Shawarma", "Undhiyu", "Tacos", "Injera"];
 
 export default function Hero() {
+  const { t } = useTranslation();
   return (
     <section className="relative overflow-hidden px-6 pb-28 pt-16 md:pt-24">
       <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
@@ -24,8 +26,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-[2rem] font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-6xl"
           >
-            Diabetes care that finally{" "}
-            <span className="text-gradient-brand">speaks your food&rsquo;s language.</span>
+            <span className="text-gradient-brand">{t("hero.title")}</span>
           </motion.h1>
 
           <motion.p
@@ -34,8 +35,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-6 max-w-lg text-lg leading-relaxed text-ink-dim"
           >
-            Glucose, HbA1c, blood pressure, meals and medication — tracked around the food
-            you actually eat, with free tools and guides for everyone else along the way.
+            {t("hero.subtitle")}
           </motion.p>
 
           <motion.div
@@ -50,13 +50,13 @@ export default function Hero() {
               rel="noreferrer"
               className="rounded-full bg-teal-500 px-6 py-3.5 text-sm font-semibold text-bg shadow-lg shadow-teal-500/20 transition-transform hover:scale-105 hover:bg-teal-400"
             >
-              Get it on Google Play
+              {t("hero.cta1")}
             </a>
             <a
               href="/tools"
               className="rounded-full border border-line px-6 py-3.5 text-sm font-semibold text-ink-dim transition-colors hover:border-teal-400/40 hover:text-teal-300"
             >
-              Try the free tools →
+              {t("hero.cta2")} →
             </a>
           </motion.div>
 

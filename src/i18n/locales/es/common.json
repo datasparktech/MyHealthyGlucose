@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "tools": "Herramientas",
+    "infoHub": "Centro de Información",
+    "blog": "Blog",
+    "askAI": "Preguntar a la IA",
+    "community": "Comunidad",
+    "features": "Características",
+    "store": "Tienda",
+    "give": "Donar",
+    "contact": "Contacto",
+    "login": "Iniciar sesión",
+    "dashboard": "Panel",
+    "getApp": "Obtener la app",
+    "teamLogin": "Acceso del equipo"
+  },
+  "footer": {
+    "tagline": "Un compañero de cuidado de la diabetes creado por DataSpark Tech LLC — gratis donde importa, sin anuncios, nunca.",
+    "explore": "Explorar",
+    "legal": "Legal",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfUse": "Términos de Uso",
+    "medicalDisclaimer": "Aviso Médico",
+    "rights": "MyHealthyGlucose es una herramienta personal de seguimiento — no es un dispositivo médico y no diagnostica, trata ni reemplaza el consejo de un profesional de la salud calificado."
+  },
+  "hero": {
+    "title": "Cuidado de la diabetes, diseñado según lo que comes.",
+    "subtitle": "Controla la glucosa, la HbA1c, la presión arterial, las comidas y la medicación — junto a comida real y regional. Herramientas gratuitas, sin anuncios, nunca.",
+    "cta1": "Obtener la app",
+    "cta2": "Explorar herramientas gratuitas"
+  },
+  "common": {
+    "learnMore": "Saber más",
+    "getStarted": "Comenzar",
+    "comingSoon": "Próximamente",
+    "loading": "Cargando…"
+  }
+}

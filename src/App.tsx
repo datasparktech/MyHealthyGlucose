@@ -16,6 +16,8 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Community = lazy(() => import("./pages/Community"));
 const Assistant = lazy(() => import("./pages/Assistant"));
 const Legal = lazy(() => import("./pages/Legal"));
+const Store = lazy(() => import("./pages/Store"));
+const Give = lazy(() => import("./pages/Give"));
 const ToolsHub = lazy(() => import("./pages/ToolsHub"));
 const InfoHub = lazy(() => import("./pages/InfoHub"));
 const Guide = lazy(() => import("./pages/Guide"));
@@ -73,6 +75,8 @@ export default function App() {
             <Route path="/community" element={<Community />} />
             <Route path="/assistant" element={<Assistant />} />
             <Route path="/legal/:slug" element={<Legal />} />
+            <Route path="/store" element={<Store />} />
+            <Route path="/give" element={<Give />} />
 
             <Route path="/tools" element={<ToolsHub />} />
             <Route path="/tools/bmi-calculator" element={<BMICalculator />} />

@@ -5,6 +5,7 @@ import PhotoBands from "../components/PhotoBands";
 import AppShowcase from "../components/AppShowcase";
 import HowItWorks from "../components/HowItWorks";
 import AppLandingZone from "../components/AppLandingZone";
+import GiveBackBand from "../components/GiveBackBand";
 import CTASection from "../components/CTASection";
 import Seo from "../components/Seo";
 
@@ -23,6 +24,7 @@ export default function Home() {
       <AppShowcase />
       <HowItWorks />
       <AppLandingZone />
+      <GiveBackBand />
       <CTASection />
     </>
   );

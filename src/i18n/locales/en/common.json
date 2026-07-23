@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "tools": "Tools",
+    "infoHub": "Info Hub",
+    "blog": "Blog",
+    "askAI": "Ask AI",
+    "community": "Community",
+    "features": "Features",
+    "store": "Store",
+    "give": "Give Back",
+    "contact": "Contact",
+    "login": "Login",
+    "dashboard": "Dashboard",
+    "getApp": "Get the app",
+    "teamLogin": "Team login"
+  },
+  "footer": {
+    "tagline": "A diabetes care companion built by DataSpark Tech LLC — free where it matters, no ads, ever.",
+    "explore": "Explore",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "medicalDisclaimer": "Medical Disclaimer",
+    "rights": "MyHealthyGlucose is a personal tracking tool — it is not a medical device and does not diagnose, treat, or replace advice from a qualified healthcare professional."
+  },
+  "hero": {
+    "title": "Diabetes care, built around the food you eat.",
+    "subtitle": "Track glucose, HbA1c, blood pressure, meals and medication — around real, regional food. Free tools, no ads, ever.",
+    "cta1": "Get the app",
+    "cta2": "Explore free tools"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "getStarted": "Get started",
+    "comingSoon": "Coming soon",
+    "loading": "Loading…"
+  }
+}
