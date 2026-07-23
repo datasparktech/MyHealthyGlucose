@@ -9,6 +9,7 @@ import {
   type Testimonial,
 } from "../lib/community";
 import Reveal from "../components/Reveal";
+import AdminNav from "../components/AdminNav";
 
 export default function AdminDashboard() {
   const { user, role, signOut, configured } = useAuth();
@@ -96,6 +97,8 @@ export default function AdminDashboard() {
             </div>
           </div>
         </Reveal>
+
+        <AdminNav />
 
         <Reveal delay={0.1} className="mt-10">
           {loading ? (

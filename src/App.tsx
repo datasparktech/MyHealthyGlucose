@@ -38,6 +38,8 @@ const CarbTargetCalculator = lazy(() => import("./pages/tools/CarbTargetCalculat
 const PostMealTarget = lazy(() => import("./pages/tools/PostMealTarget"));
 const Login = lazy(() => import("./pages/Login"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const AdminStore = lazy(() => import("./pages/AdminStore"));
+const AdminSettings = lazy(() => import("./pages/AdminSettings"));
 const BlogEditor = lazy(() => import("./pages/BlogEditor"));
 
 function ScrollToTop() {
@@ -105,6 +107,22 @@ export default function App() {
               element={
                 <ProtectedRoute>
                   <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/store"
+              element={
+                <ProtectedRoute>
+                  <AdminStore />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/settings"
+              element={
+                <ProtectedRoute>
+                  <AdminSettings />
                 </ProtectedRoute>
               }
             />

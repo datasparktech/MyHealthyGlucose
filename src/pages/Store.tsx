@@ -7,7 +7,9 @@ import {
   setCountryOverride,
   type StoreCountry,
 } from "../lib/geo";
-import { STORE_PRODUCTS, CATEGORIES, type StoreProduct } from "../data/storeProducts";
+import { fetchActiveProducts, type DbStoreProduct } from "../lib/store";
+import { isSupabaseConfigured } from "../lib/supabase";
+import { STORE_PRODUCTS as SEED_PRODUCTS, type StoreProduct } from "../data/storeProducts";
 
 const COUNTRY_LABEL: Record<StoreCountry, string> = {
   US: "🇺🇸 United States",
@@ -15,22 +17,64 @@ const COUNTRY_LABEL: Record<StoreCountry, string> = {
   OTHER: "🌍 Other",
 };
 
+// Normalize both the DB shape and the static-seed shape into one common shape
+interface DisplayProduct {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  US?: { priceRange: string; url: string; retailer: string };
+  IN?: { priceRange: string; url: string; retailer: string };
+}
+
+function fromDb(p: DbStoreProduct): DisplayProduct {
+  return {
+    id: p.id,
+    name: p.name,
+    category: p.category,
+    description: p.description,
+    US: p.us_url ? { priceRange: p.us_price, url: p.us_url, retailer: p.us_retailer } : undefined,
+    IN: p.in_url ? { priceRange: p.in_price, url: p.in_url, retailer: p.in_retailer } : undefined,
+  };
+}
+function fromSeed(p: StoreProduct): DisplayProduct {
+  return { id: p.id, name: p.name, category: p.category, description: p.description, US: p.US, IN: p.IN };
+}
+
 export default function Store() {
   const [country, setCountry] = useState<StoreCountry | null>(null);
   const [category, setCategory] = useState<string>("All");
+  const [products, setProducts] = useState<DisplayProduct[]>(SEED_PRODUCTS.map(fromSeed));
+  const [loadingProducts, setLoadingProducts] = useState(isSupabaseConfigured);
 
   useEffect(() => {
     detectCountry().then(setCountry);
   }, []);
+
+  useEffect(() => {
+    if (!isSupabaseConfigured) return;
+    fetchActiveProducts()
+      .then((dbProducts) => {
+        // If the admin hasn't added any products yet, keep showing the
+        // built-in starter catalog rather than an empty store.
+        if (dbProducts.length > 0) setProducts(dbProducts.map(fromDb));
+      })
+      .catch(() => {
+        // DB fetch failed (table not migrated yet, etc.) — keep seed catalog
+      })
+      .finally(() => setLoadingProducts(false));
+  }, []);
+
+  const categories = useMemo(() => [...new Set(products.map((p) => p.category))], [products]);
 
   function changeCountry(c: StoreCountry) {
     setCountryOverride(c);
     setCountry(c);
   }
 
-  const products = useMemo(
-    () => (category === "All" ? STORE_PRODUCTS : STORE_PRODUCTS.filter((p) => p.category === category)),
-    [category],
+  const filteredProducts = useMemo(
+    () => (category === "All" ? products : products.filter((p) => p.category === category)),
+    [category, products],
   );
 
   // For "OTHER" countries, default to showing US pricing/links as the broadest option
@@ -88,7 +132,7 @@ export default function Store() {
         {/* Category filter */}
         <Reveal delay={0.12} className="mt-10">
           <div className="flex flex-wrap justify-center gap-2">
-            {["All", ...CATEGORIES].map((c) => (
+            {["All", ...categories].map((c) => (
               <button
                 key={c}
                 onClick={() => setCategory(c)}
@@ -105,11 +149,17 @@ export default function Store() {
         </Reveal>
 
         {/* Product grid */}
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((p, i) => (
-            <ProductCard key={p.id} product={p} country={effectiveCountry} delay={(i % 6) * 0.05} />
-          ))}
-        </div>
+        {loadingProducts ? (
+          <div className="mt-10 flex justify-center">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-line border-t-teal-400" />
+          </div>
+        ) : (
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredProducts.map((p, i) => (
+              <ProductCard key={p.id} product={p} country={effectiveCountry} delay={(i % 6) * 0.05} />
+            ))}
+          </div>
+        )}
 
         <Reveal delay={0.1} className="mt-14 text-center">
           <p className="text-sm text-muted">
@@ -127,7 +177,7 @@ function ProductCard({
   country,
   delay,
 }: {
-  product: StoreProduct;
+  product: DisplayProduct;
   country: "US" | "IN";
   delay: number;
 }) {

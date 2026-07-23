@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
 import { IMAGES } from "../data/images";
+import { fetchSetting } from "../lib/settings";
+import { isSupabaseConfigured } from "../lib/supabase";
 
-const DONATION_LINK = import.meta.env.VITE_DONATION_LINK as string | undefined;
+const ENV_FALLBACK = import.meta.env.VITE_DONATION_LINK as string | undefined;
 
 export default function Give() {
   const [allocation, setAllocation] = useState<"kits" | "ngo">("kits");
+  const [donationLink, setDonationLink] = useState<string | undefined>(ENV_FALLBACK);
+
+  useEffect(() => {
+    if (!isSupabaseConfigured) return;
+    fetchSetting("donation_link").then((v) => {
+      if (v) setDonationLink(v);
+    });
+  }, []);
 
   return (
     <div className="px-6 py-16">
@@ -87,9 +97,9 @@ export default function Give() {
         {/* Donate CTA */}
         <Reveal delay={0.12} className="mt-10">
           <div className="glass rounded-2xl p-6 text-center sm:p-8">
-            {DONATION_LINK ? (
+            {donationLink ? (
               <a
-                href={DONATION_LINK}
+                href={donationLink}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-block rounded-full bg-teal-500 px-8 py-3.5 text-sm font-semibold text-bg transition-transform hover:scale-105 hover:bg-teal-400"

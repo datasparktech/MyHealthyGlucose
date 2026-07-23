@@ -1,8 +1,18 @@
 # Setup: Give Back / Donations
 
-The `/give` page is built and live, but the **Donate now** button won't do
-anything until you connect a real payment link. Until then, it shows a
-friendly "not open yet" message — nothing is broken.
+The `/give` page is built and live. The **Donate now** button reads its
+destination from an admin-editable setting, so you can set or change it
+anytime from **/admin/settings** — no code changes or redeploys needed.
+
+## Quick start (the easy way)
+1. Run `docs/supabase-schema-admin.sql` in Supabase (if you haven't already)
+2. Log in and go to **/admin/settings**
+3. Paste your payment link into "Donation link" → Save
+4. Done — the button goes live immediately
+
+Until you set a link there, the page shows a friendly "not open yet"
+message. (There's also a `VITE_DONATION_LINK` env-var fallback from before
+the admin UI existed — the admin setting takes priority if both are set.)
 
 ## Please read this first: the non-coding part
 
