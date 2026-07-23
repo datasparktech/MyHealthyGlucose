@@ -29,20 +29,31 @@ export default function GlucoseCard({ className = "" }: { className?: string }) 
       animate={inView ? { opacity: 1, y: 0, rotate: -2 } : {}}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ rotate: 0, scale: 1.015 }}
-      className={`glass w-[19rem] rounded-3xl p-6 shadow-2xl shadow-black/40 ${className}`}
+      className={`glass w-[19rem] rounded-3xl p-6 shadow-2xl shadow-black/08 ${className}`}
       style={{ transformOrigin: "center" }}
     >
       <div className="flex items-center justify-between">
         <p className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-muted">
           Today&rsquo;s glucose
         </p>
-        <span className="rounded-full bg-teal-500/15 px-2.5 py-1 text-[11px] font-semibold text-teal-300 ring-1 ring-teal-400/30">
+        <span className="flex items-center gap-1.5 rounded-full bg-teal-500/15 px-2.5 py-1 text-[11px] font-semibold text-teal-300 ring-1 ring-teal-400/30">
+          <motion.span
+            className="h-1.5 w-1.5 rounded-full bg-teal-400"
+            animate={{ scale: [1, 1.6, 1], opacity: [1, 0.5, 1] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          />
           In range
         </span>
       </div>
 
       <div className="mt-3 flex items-end gap-2">
-        <span className="font-display text-5xl font-semibold tabular-nums text-ink">{glucose}</span>
+        <motion.span
+          className="font-display text-5xl font-semibold tabular-nums text-ink"
+          animate={inView ? { textShadow: ["0 0 0px rgba(12,148,104,0)", "0 0 18px rgba(12,148,104,0.25)", "0 0 0px rgba(12,148,104,0)"] } : {}}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: 1.6 }}
+        >
+          {glucose}
+        </motion.span>
         <span className="mb-1.5 text-sm text-muted">mg/dL</span>
       </div>
 
@@ -60,8 +71,8 @@ export default function GlucoseCard({ className = "" }: { className?: string }) 
         />
         <defs>
           <linearGradient id="trendGradient" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#2dd4bf" />
-            <stop offset="100%" stopColor="#fbbf6b" />
+            <stop offset="0%" stopColor="#0B8161" />
+            <stop offset="100%" stopColor="#C85A2A" />
           </linearGradient>
         </defs>
       </svg>

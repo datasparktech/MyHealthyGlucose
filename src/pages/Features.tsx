@@ -137,7 +137,7 @@ export default function Features() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="w-52 overflow-hidden rounded-[1.8rem] border-4 border-bg-elevated bg-bg shadow-2xl shadow-black/40 ring-1 ring-line sm:w-64"
+                    className="w-52 overflow-hidden rounded-[1.8rem] border-4 border-bg-elevated bg-bg shadow-2xl shadow-black/08 ring-1 ring-line sm:w-64"
                   >
                     <img src={s.image} alt={s.title} className="w-full" loading="lazy" />
                   </motion.div>

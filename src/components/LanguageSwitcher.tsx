@@ -41,7 +41,7 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 z-30 mt-2 w-40 overflow-hidden rounded-xl border border-line bg-card shadow-2xl shadow-black/50"
+            className="absolute right-0 z-30 mt-2 w-40 overflow-hidden rounded-xl border border-line bg-card shadow-2xl shadow-black/10"
           >
             {LANGUAGES.map((l) => (
               <li key={l.code}>

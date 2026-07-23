@@ -52,7 +52,7 @@ export default function Blog() {
                 <Reveal key={p.slug} delay={i * 0.06}>
                   <Link
                     to={`/blog/${p.slug}`}
-                    className="group glass flex h-full flex-col overflow-hidden rounded-2xl transition-colors duration-300 hover:bg-card-hover"
+                    className="group glass card-lift flex h-full flex-col overflow-hidden rounded-2xl transition-colors duration-300 hover:bg-card-hover"
                   >
                     {p.cover_url && (
                       <div className="aspect-[16/9] overflow-hidden">

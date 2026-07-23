@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
+import { IMAGES } from "../data/images";
 
 const FORM_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
 
@@ -68,6 +69,15 @@ export default function Contact() {
             Questions, feedback, a feature you wish existed, or a cuisine you want us to add —
             send it over and it goes straight to our team.
           </p>
+        </Reveal>
+
+        <Reveal delay={0.06} className="mt-8 overflow-hidden rounded-[1.5rem] ring-1 ring-line">
+          <img
+            src={IMAGES.doctorPatient}
+            alt="A healthcare provider in conversation with a patient"
+            loading="lazy"
+            className="aspect-[21/9] w-full object-cover"
+          />
         </Reveal>
 
         <Reveal delay={0.1} className="mt-10">

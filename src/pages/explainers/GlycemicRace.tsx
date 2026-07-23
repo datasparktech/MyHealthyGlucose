@@ -16,7 +16,7 @@ const FOODS: RaceFood[] = [
   { name: "Oatmeal", gi: 55, color: "#a78bfa", emoji: "🥣" },
   { name: "Pasta", gi: 49, color: "#60a5fa", emoji: "🍝" },
   { name: "Apple", gi: 36, color: "#4ade80", emoji: "🍎" },
-  { name: "Lentils (Dal)", gi: 32, color: "#2dd4bf", emoji: "🥘" },
+  { name: "Lentils (Dal)", gi: 32, color: "#0C9468", emoji: "🥘" },
   { name: "Glucose Tablet", gi: 100, color: "#f43f5e", emoji: "💊" },
 ];
 
@@ -109,15 +109,15 @@ export default function GlycemicRace() {
         {/* Chart */}
         <div className="mt-4 overflow-x-auto">
           <svg viewBox={`0 0 ${CHART_W} ${CHART_H}`} className="w-full min-w-[480px]">
-            <line x1={PAD_L} y1={CHART_H - PAD_B} x2={CHART_W} y2={CHART_H - PAD_B} stroke="#334155" />
+            <line x1={PAD_L} y1={CHART_H - PAD_B} x2={CHART_W} y2={CHART_H - PAD_B} stroke="#A9CBC0" />
             {[100, 150, 200].map((g) => (
               <g key={g}>
-                <line x1={PAD_L} y1={yFor(g)} x2={CHART_W} y2={yFor(g)} stroke="#334155" strokeDasharray="3" opacity="0.4" />
-                <text x="4" y={yFor(g) + 4} fontSize="10" fill="#8b95a5">{g}</text>
+                <line x1={PAD_L} y1={yFor(g)} x2={CHART_W} y2={yFor(g)} stroke="#A9CBC0" strokeDasharray="3" opacity="0.4" />
+                <text x="4" y={yFor(g) + 4} fontSize="10" fill="#5C7C76">{g}</text>
               </g>
             ))}
-            <text x={PAD_L} y={CHART_H - 8} fontSize="10" fill="#8b95a5">Eat</text>
-            <text x={CHART_W - 60} y={CHART_H - 8} fontSize="10" fill="#8b95a5">+3 hours</text>
+            <text x={PAD_L} y={CHART_H - 8} fontSize="10" fill="#5C7C76">Eat</text>
+            <text x={CHART_W - 60} y={CHART_H - 8} fontSize="10" fill="#5C7C76">+3 hours</text>
 
             {active.map((f) => (
               <motion.path

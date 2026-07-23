@@ -36,7 +36,7 @@ export default function AppLandingZone() {
           <Reveal>
             <div className="glass rounded-[2rem] p-8">
               <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start">
-                <div className="shrink-0 rounded-2xl bg-white p-3 shadow-lg shadow-black/30">
+                <div className="shrink-0 rounded-2xl bg-white p-3 shadow-lg shadow-black/06">
                   <img src={appQr} alt="QR code to download MyHealthyGlucose" className="h-32 w-32" />
                   <p className="mt-2 text-center text-[11px] font-medium text-gray-500">Scan to install</p>
                 </div>
@@ -116,7 +116,7 @@ function RealPhone({
       transition={{ duration: 0.6 }}
       className={`relative ${big ? "w-40 sm:w-52" : "w-36 sm:w-44"} ${className}`}
     >
-      <div className="overflow-hidden rounded-[1.6rem] border-4 border-bg-elevated bg-bg shadow-2xl shadow-black/40 ring-1 ring-line">
+      <div className="overflow-hidden rounded-[1.6rem] border-4 border-bg-elevated bg-bg shadow-2xl shadow-black/08 ring-1 ring-line">
         <img src={src} alt={alt} className="w-full" loading="lazy" />
       </div>
     </motion.div>

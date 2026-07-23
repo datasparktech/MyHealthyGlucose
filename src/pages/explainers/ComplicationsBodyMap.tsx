@@ -82,20 +82,20 @@ export default function ComplicationsBodyMap() {
           <div className="mx-auto w-full max-w-[220px]">
             <svg viewBox="0 0 300 500" className="w-full">
               {/* Head */}
-              <circle cx="150" cy="55" r="38" fill="#1e2b38" stroke="#334155" strokeWidth="2" />
+              <circle cx="150" cy="55" r="38" fill="#E6F3EE" stroke="#A9CBC0" strokeWidth="2" />
               {/* Neck */}
-              <rect x="138" y="88" width="24" height="20" fill="#1e2b38" stroke="#334155" strokeWidth="2" />
+              <rect x="138" y="88" width="24" height="20" fill="#E6F3EE" stroke="#A9CBC0" strokeWidth="2" />
               {/* Torso */}
-              <rect x="95" y="105" width="110" height="160" rx="30" fill="#1e2b38" stroke="#334155" strokeWidth="2" />
+              <rect x="95" y="105" width="110" height="160" rx="30" fill="#E6F3EE" stroke="#A9CBC0" strokeWidth="2" />
               {/* Arms */}
-              <rect x="55" y="115" width="34" height="150" rx="17" fill="#1e2b38" stroke="#334155" strokeWidth="2" />
-              <rect x="211" y="115" width="34" height="150" rx="17" fill="#1e2b38" stroke="#334155" strokeWidth="2" />
+              <rect x="55" y="115" width="34" height="150" rx="17" fill="#E6F3EE" stroke="#A9CBC0" strokeWidth="2" />
+              <rect x="211" y="115" width="34" height="150" rx="17" fill="#E6F3EE" stroke="#A9CBC0" strokeWidth="2" />
               {/* Legs */}
-              <rect x="105" y="262" width="38" height="190" rx="18" fill="#1e2b38" stroke="#334155" strokeWidth="2" />
-              <rect x="157" y="262" width="38" height="190" rx="18" fill="#1e2b38" stroke="#334155" strokeWidth="2" />
+              <rect x="105" y="262" width="38" height="190" rx="18" fill="#E6F3EE" stroke="#A9CBC0" strokeWidth="2" />
+              <rect x="157" y="262" width="38" height="190" rx="18" fill="#E6F3EE" stroke="#A9CBC0" strokeWidth="2" />
               {/* Feet */}
-              <ellipse cx="124" cy="465" rx="24" ry="14" fill="#1e2b38" stroke="#334155" strokeWidth="2" />
-              <ellipse cx="176" cy="465" rx="24" ry="14" fill="#1e2b38" stroke="#334155" strokeWidth="2" />
+              <ellipse cx="124" cy="465" rx="24" ry="14" fill="#E6F3EE" stroke="#A9CBC0" strokeWidth="2" />
+              <ellipse cx="176" cy="465" rx="24" ry="14" fill="#E6F3EE" stroke="#A9CBC0" strokeWidth="2" />
 
               {/* Hotspots */}
               {HOTSPOTS.map((h) => (
@@ -116,8 +116,8 @@ export default function ComplicationsBodyMap() {
                     cx={h.x}
                     cy={h.y}
                     r="16"
-                    fill={active === h.id ? "#2dd4bf" : "#fb923c"}
-                    stroke={active === h.id ? "#5eead4" : "#fdba74"}
+                    fill={active === h.id ? "#0C9468" : "#fb923c"}
+                    stroke={active === h.id ? "#0FA377" : "#C85A2A"}
                     strokeWidth="2"
                     animate={{ scale: active === h.id ? 1.15 : 1 }}
                   />

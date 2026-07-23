@@ -51,7 +51,7 @@ export default function AppShowcase() {
             <img
               src={featureGraphic}
               alt="MyHealthyGlucose app showing blood glucose, carbs and calories"
-              className="relative w-full rounded-[1.5rem] shadow-2xl shadow-black/40 ring-1 ring-line"
+              className="relative w-full rounded-[1.5rem] shadow-2xl shadow-black/08 ring-1 ring-line"
             />
           </motion.div>
         </Reveal>

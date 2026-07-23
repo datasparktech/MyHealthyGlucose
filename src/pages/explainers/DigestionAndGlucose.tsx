@@ -36,10 +36,10 @@ export default function DigestionAndGlucose() {
             {/* Stomach */}
             <motion.circle
               cx="80" cy="90" r="46"
-              fill={showFood ? "#1e2b38" : "#141e29"}
-              stroke="#334155" strokeWidth="2"
+              fill={showFood ? "#E6F3EE" : "#DCEEE8"}
+              stroke="#A9CBC0" strokeWidth="2"
             />
-            <text x="80" y="94" textAnchor="middle" fontSize="12" fontWeight="600" fill="#8b95a5">Stomach</text>
+            <text x="80" y="94" textAnchor="middle" fontSize="12" fontWeight="600" fill="#5C7C76">Stomach</text>
             <AnimatePresence>
               {showFood && (
                 <motion.text
@@ -54,8 +54,8 @@ export default function DigestionAndGlucose() {
             </AnimatePresence>
 
             {/* Intestine tube */}
-            <path d="M 80 136 Q 60 200 120 210 Q 180 220 160 260" fill="none" stroke="#334155" strokeWidth="18" strokeLinecap="round" />
-            <text x="150" y="285" textAnchor="middle" fontSize="12" fontWeight="600" fill="#8b95a5">Small intestine</text>
+            <path d="M 80 136 Q 60 200 120 210 Q 180 220 160 260" fill="none" stroke="#A9CBC0" strokeWidth="18" strokeLinecap="round" />
+            <text x="150" y="285" textAnchor="middle" fontSize="12" fontWeight="600" fill="#5C7C76">Small intestine</text>
 
             {/* Glucose dots moving down through intestine into bloodstream (up and to the right conceptually) */}
             <AnimatePresence>
@@ -80,7 +80,7 @@ export default function DigestionAndGlucose() {
               <motion.text
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                x="230" y="40" textAnchor="middle" fontSize="11" fontWeight="600" fill="#2dd4bf"
+                x="230" y="40" textAnchor="middle" fontSize="11" fontWeight="600" fill="#0C9468"
               >
                 → into blood
               </motion.text>
@@ -91,8 +91,8 @@ export default function DigestionAndGlucose() {
           <div>
             <svg viewBox="-10 -10 480 140" className="w-full">
               {/* baseline grid */}
-              <line x1="0" y1="90" x2="460" y2="90" stroke="#334155" strokeDasharray="4" />
-              <text x="0" y="105" fontSize="10" fill="#8b95a5">Time after eating →</text>
+              <line x1="0" y1="90" x2="460" y2="90" stroke="#A9CBC0" strokeDasharray="4" />
+              <text x="0" y="105" fontSize="10" fill="#5C7C76">Time after eating →</text>
 
               {showCurves && (
                 <>
@@ -109,7 +109,7 @@ export default function DigestionAndGlucose() {
                   <motion.path
                     d={SLOW_PATH}
                     fill="none"
-                    stroke="#2dd4bf"
+                    stroke="#0C9468"
                     strokeWidth="3"
                     strokeLinecap="round"
                     initial={{ pathLength: 0 }}

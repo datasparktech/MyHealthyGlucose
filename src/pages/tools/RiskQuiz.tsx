@@ -76,18 +76,18 @@ function bandFor(score: number) {
   if (score <= 2)
     return {
       label: "Lower risk",
-      color: "#2dd4bf",
+      color: "#0B8161",
       note: "Your answers suggest a lower risk profile right now. Staying active and eating well keeps it that way — and it&rsquo;s still worth routine checkups.",
     };
   if (score <= 5)
     return {
       label: "Moderate risk",
-      color: "#fbbf6b",
+      color: "#C85A2A",
       note: "A few risk factors showed up. This is a good moment to talk with a doctor about a simple blood-sugar test and any changes worth making.",
     };
   return {
     label: "Higher risk",
-    color: "#f59e0b",
+    color: "#B8481B",
     note: "Several risk factors are present. This doesn&rsquo;t mean you have diabetes — but it&rsquo;s a strong reason to see a doctor for proper screening soon.",
   };
 }

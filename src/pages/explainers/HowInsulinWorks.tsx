@@ -37,23 +37,23 @@ export default function HowInsulinWorks() {
           <g>
             <motion.ellipse
               cx="110" cy="150" rx="70" ry="48"
-              fill={pancreasActive ? "#2dd4bf" : "#1e2b38"}
-              stroke={pancreasActive ? "#5eead4" : "#334155"}
+              fill={pancreasActive ? "#0C9468" : "#E6F3EE"}
+              stroke={pancreasActive ? "#0FA377" : "#A9CBC0"}
               strokeWidth="2"
               animate={{
-                fill: pancreasActive ? "#2dd4bf" : "#1e2b38",
+                fill: pancreasActive ? "#0C9468" : "#E6F3EE",
                 scale: pancreasActive ? [1, 1.08, 1] : 1,
               }}
               transition={{ duration: 0.8, repeat: pancreasActive ? Infinity : 0, repeatDelay: 0.6 }}
             />
-            <text x="110" y="155" textAnchor="middle" fontSize="13" fontWeight="600" fill={pancreasActive ? "#0a1520" : "#8b95a5"}>
+            <text x="110" y="155" textAnchor="middle" fontSize="13" fontWeight="600" fill={pancreasActive ? "#F1FAF7" : "#5C7C76"}>
               Pancreas
             </text>
           </g>
 
           {/* Blood vessel */}
-          <rect x="220" y="110" width="360" height="80" rx="40" fill="#1e2b38" stroke="#334155" strokeWidth="2" />
-          <text x="400" y="100" textAnchor="middle" fontSize="12" fill="#8b95a5" fontWeight="600" letterSpacing="0.5">
+          <rect x="220" y="110" width="360" height="80" rx="40" fill="#E6F3EE" stroke="#A9CBC0" strokeWidth="2" />
+          <text x="400" y="100" textAnchor="middle" fontSize="12" fill="#5C7C76" fontWeight="600" letterSpacing="0.5">
             BLOODSTREAM
           </text>
 
@@ -85,7 +85,7 @@ export default function HowInsulinWorks() {
                 <motion.g key={i}>
                   <motion.rect
                     width="16" height="9" rx="3"
-                    fill="#5eead4"
+                    fill="#0FA377"
                     initial={{ x: 150, y: 145, opacity: 0 }}
                     animate={{
                       x: gateOpen ? 645 : 380 + i * 20,
@@ -100,18 +100,18 @@ export default function HowInsulinWorks() {
 
           {/* Cell */}
           <g>
-            <circle cx="700" cy="150" r="80" fill="#141e29" stroke="#334155" strokeWidth="2" />
-            <text x="700" y="230" textAnchor="middle" fontSize="13" fontWeight="600" fill="#8b95a5">
+            <circle cx="700" cy="150" r="80" fill="#DCEEE8" stroke="#A9CBC0" strokeWidth="2" />
+            <text x="700" y="230" textAnchor="middle" fontSize="13" fontWeight="600" fill="#5C7C76">
               Cell
             </text>
 
             {/* Receptor gate on the membrane */}
             <motion.rect
               x="612" y="135" width="16" height="30" rx="4"
-              fill={gateOpen ? "#2dd4bf" : "#475569"}
+              fill={gateOpen ? "#0C9468" : "#8FB0A6"}
               animate={{
                 width: gateOpen ? 26 : 16,
-                fill: gateOpen ? "#2dd4bf" : "#475569",
+                fill: gateOpen ? "#0C9468" : "#8FB0A6",
               }}
               transition={{ duration: 0.4 }}
             />

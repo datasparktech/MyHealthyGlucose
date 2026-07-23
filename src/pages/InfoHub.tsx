@@ -46,7 +46,7 @@ export default function InfoHub() {
             <Reveal key={g.slug} delay={i * 0.07}>
               <Link
                 to={`/info/${g.slug}`}
-                className="group glass flex h-full flex-col rounded-2xl p-7 transition-colors duration-300 hover:bg-card-hover"
+                className="group glass card-lift flex h-full flex-col rounded-2xl p-7 transition-colors duration-300 hover:bg-card-hover"
               >
                 <div className="flex items-center justify-between">
                   <span
@@ -80,7 +80,7 @@ export default function InfoHub() {
               <Reveal key={e.slug} delay={i * 0.07}>
                 <Link
                   to={`/info/${e.slug}`}
-                  className="group glass flex h-full flex-col rounded-2xl p-6 transition-colors duration-300 hover:bg-card-hover"
+                  className="group glass card-lift flex h-full flex-col rounded-2xl p-6 transition-colors duration-300 hover:bg-card-hover"
                 >
                   <span className="text-3xl">{e.icon}</span>
                   <h3 className="mt-3 font-display text-base font-semibold text-ink">{e.title}</h3>

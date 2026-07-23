@@ -4,7 +4,7 @@ export default function CTASection() {
   return (
     <section className="px-6 py-24">
       <Reveal className="mx-auto max-w-4xl">
-        <div className="glass relative overflow-hidden rounded-[2rem] px-8 py-16 text-center shadow-2xl shadow-black/30 sm:px-16">
+        <div className="glass relative overflow-hidden rounded-[2rem] px-8 py-16 text-center shadow-2xl shadow-black/06 sm:px-16">
           <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-teal-500/20 blur-[100px]" />
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange-400">
             Free, forever, where it matters

@@ -7,30 +7,36 @@
 @import "@fontsource/inter/600.css";
 
 @theme {
-  /* Brand-derived dark palette */
-  --color-bg: #050f0d;
-  --color-bg-elevated: #0a1e1a;
-  --color-card: #0d2621;
-  --color-card-hover: #113630;
-  --color-line: rgba(148, 197, 189, 0.14);
+  /* "Vital Bloom" — soothing wellness palette: mint-white canvas,
+     deep-emerald text/accents, warm coral energy accent. Replaces the
+     prior dark theme; variable NAMES are unchanged so every component
+     picks up the new look automatically. */
+  --color-bg: #f1faf7;
+  --color-bg-elevated: #e6f3ee;
+  --color-card: #ffffff;
+  --color-card-hover: #f0faf6;
+  --color-line: rgba(14, 74, 58, 0.14);
 
-  --color-teal-200: #a7f3e8;
-  --color-teal-300: #5eead4;
-  --color-teal-400: #2dd4bf;
-  --color-teal-500: #14b8a6;
-  --color-teal-600: #0d9488;
-  --color-teal-700: #0f766e;
-  --color-teal-900: #0a2e29;
+  --color-teal-100: #dff6ee;
+  --color-teal-200: #0c8c68;
+  --color-teal-300: #0b8161;
+  --color-teal-400: #0fa377;
+  --color-teal-500: #0c9468;
+  --color-teal-600: #0a7d57;
+  --color-teal-700: #086647;
+  --color-teal-900: #06331f;
 
-  --color-orange-300: #fcd39a;
-  --color-orange-400: #fbbf6b;
-  --color-orange-500: #f59e0b;
-  --color-orange-600: #d97f06;
+  --color-orange-100: #ffe9dd;
+  --color-orange-200: #a83f16;
+  --color-orange-300: #b8481b;
+  --color-orange-400: #c85a2a;
+  --color-orange-500: #d35a28;
+  --color-orange-600: #b84a1c;
 
-  --color-ink: #eafcf7;
-  --color-ink-dim: #cfe9e2;
-  --color-muted: #8fb5ac;
-  --color-muted-2: #648a82;
+  --color-ink: #0e2e2a;
+  --color-ink-dim: #2c4a44;
+  --color-muted: #5c7c76;
+  --color-muted-2: #7fa098;
 
   --font-display: "Space Grotesk", "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -56,28 +62,48 @@ h1, h2, h3, p {
 
 ::selection {
   background: var(--color-teal-500);
-  color: #06201b;
+  color: #f1faf7;
 }
 
-/* Signature: fine radial dot-grid texture, very subtle */
+/* Signature texture: fine dot-grid, soft on the mint canvas */
 .dot-grid {
-  background-image: radial-gradient(rgba(148, 197, 189, 0.16) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(14, 74, 58, 0.09) 1px, transparent 1px);
   background-size: 26px 26px;
 }
 
-/* Glass panel */
+/* Glass panel — frosted white pane over the mint canvas */
 .glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.58));
   border: 1px solid var(--color-line);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 4px 24px rgba(14, 74, 58, 0.06);
 }
 
 .text-gradient-brand {
-  background: linear-gradient(90deg, #5eead4, #2dd4bf 45%, #fbbf6b);
+  background: linear-gradient(90deg, #0b8161, #0c9468 45%, #d35a28);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Shared hover-lift micro-interaction for card grids */
+.card-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(14, 74, 58, 0.12);
+}
+
+/* Signature: a living, drifting glucose-trace line — the site's
+   recurring "vital sign" motif, used as an ambient background texture. */
+.vital-wave {
+  stroke: url(#vitalWaveGradient);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  opacity: 0.35;
 }
 
 @media (prefers-reduced-motion: reduce) {

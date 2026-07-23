@@ -199,19 +199,19 @@ function GlucoseChart({ readings }: { readings: GlucoseReading[] }) {
     <div className="overflow-x-auto">
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full min-w-[500px]" style={{ height: "auto" }}>
         {/* target band 70-180 */}
-        <rect x={pad} y={y(180)} width={W - pad * 2} height={y(70) - y(180)} fill="#2dd4bf" opacity="0.08" />
-        <line x1={pad} y1={y(180)} x2={W - pad} y2={y(180)} stroke="#2dd4bf" strokeOpacity="0.3" strokeDasharray="4" />
-        <line x1={pad} y1={y(70)} x2={W - pad} y2={y(70)} stroke="#2dd4bf" strokeOpacity="0.3" strokeDasharray="4" />
+        <rect x={pad} y={y(180)} width={W - pad * 2} height={y(70) - y(180)} fill="#0C9468" opacity="0.08" />
+        <line x1={pad} y1={y(180)} x2={W - pad} y2={y(180)} stroke="#0C9468" strokeOpacity="0.3" strokeDasharray="4" />
+        <line x1={pad} y1={y(70)} x2={W - pad} y2={y(70)} stroke="#0C9468" strokeOpacity="0.3" strokeDasharray="4" />
         {/* y labels */}
         {[70, 180, 300].map((v) => (
-          <text key={v} x={4} y={y(v) + 4} fill="#8b95a5" fontSize="10">{v}</text>
+          <text key={v} x={4} y={y(v) + 4} fill="#5C7C76" fontSize="10">{v}</text>
         ))}
         {/* curve */}
         <path d={path} fill="none" stroke="url(#cgmgrad)" strokeWidth="1.5" strokeLinejoin="round" />
         <defs>
           <linearGradient id="cgmgrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#2dd4bf" />
-            <stop offset="100%" stopColor="#5eead4" />
+            <stop offset="0%" stopColor="#0C9468" />
+            <stop offset="100%" stopColor="#0FA377" />
           </linearGradient>
         </defs>
       </svg>

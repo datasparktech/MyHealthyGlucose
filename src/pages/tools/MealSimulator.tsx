@@ -12,9 +12,9 @@ interface MealItem {
 }
 
 function glBand(gl: number) {
-  if (gl <= 10) return { label: "Low", color: "#2dd4bf" };
-  if (gl <= 19) return { label: "Medium", color: "#fbbf6b" };
-  return { label: "High", color: "#f59e0b" };
+  if (gl <= 10) return { label: "Low", color: "#0B8161" };
+  if (gl <= 19) return { label: "Medium", color: "#C85A2A" };
+  return { label: "High", color: "#B8481B" };
 }
 
 export default function MealSimulator() {
@@ -94,7 +94,7 @@ export default function MealSimulator() {
                 initial={{ opacity: 0, y: -6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
-                className="absolute z-10 mt-2 w-full overflow-hidden rounded-xl border border-line bg-card shadow-2xl shadow-black/50"
+                className="absolute z-10 mt-2 w-full overflow-hidden rounded-xl border border-line bg-card shadow-2xl shadow-black/10"
               >
                 {matches.map((f) => (
                   <li key={f.name}>

@@ -92,13 +92,13 @@ export default function DayInTheLife() {
             {/* Target range band */}
             <rect
               x={PAD} y={yFor(140)} width={CHART_W - PAD * 2} height={yFor(70) - yFor(140)}
-              fill="#2dd4bf" opacity="0.06"
+              fill="#0C9468" opacity="0.06"
             />
-            <line x1={PAD} y1={yFor(140)} x2={CHART_W - PAD} y2={yFor(140)} stroke="#2dd4bf" strokeOpacity="0.25" strokeDasharray="4" />
-            <line x1={PAD} y1={yFor(70)} x2={CHART_W - PAD} y2={yFor(70)} stroke="#2dd4bf" strokeOpacity="0.25" strokeDasharray="4" />
+            <line x1={PAD} y1={yFor(140)} x2={CHART_W - PAD} y2={yFor(140)} stroke="#0C9468" strokeOpacity="0.25" strokeDasharray="4" />
+            <line x1={PAD} y1={yFor(70)} x2={CHART_W - PAD} y2={yFor(70)} stroke="#0C9468" strokeOpacity="0.25" strokeDasharray="4" />
 
             {/* Full curve, dim */}
-            <path d={pathD} fill="none" stroke="#334155" strokeWidth="2" />
+            <path d={pathD} fill="none" stroke="#A9CBC0" strokeWidth="2" />
 
             {/* Curve drawn up to current point */}
             <motion.path
@@ -122,7 +122,7 @@ export default function DayInTheLife() {
                   cx={xFor(p.t)}
                   cy={yFor(p.glucose)}
                   r={i === active ? 7 : 4}
-                  fill={i <= active ? "#fb923c" : "#475569"}
+                  fill={i <= active ? "#fb923c" : "#8FB0A6"}
                   animate={{ r: i === active ? 7 : 4 }}
                 />
               </g>
@@ -130,7 +130,7 @@ export default function DayInTheLife() {
 
             {/* Y axis labels */}
             {[70, 120, 180].map((g) => (
-              <text key={g} x="4" y={yFor(g) + 4} fontSize="11" fill="#8b95a5">{g}</text>
+              <text key={g} x="4" y={yFor(g) + 4} fontSize="11" fill="#5C7C76">{g}</text>
             ))}
           </svg>
         </div>

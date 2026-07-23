@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
+import { IMAGES } from "../data/images";
 import { isSupabaseConfigured } from "../lib/supabase";
 import {
   fetchCuisineTallies,
@@ -323,6 +324,15 @@ export default function Community() {
             MyHealthyGlucose grows one cuisine and one feature at a time — and you get a real say
             in the order.
           </p>
+        </Reveal>
+
+        <Reveal delay={0.06} className="mt-8 overflow-hidden rounded-[1.5rem] ring-1 ring-line">
+          <img
+            src={IMAGES.indianThali}
+            alt="A shared meal representing the regional cuisines the community helps prioritize"
+            loading="lazy"
+            className="aspect-[21/9] w-full object-cover"
+          />
         </Reveal>
 
         <Reveal delay={0.1} className="mt-14">

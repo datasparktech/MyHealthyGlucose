@@ -8,7 +8,7 @@ function glucoseToA1c(avg: number) {
 }
 
 function band(a1c: number) {
-  if (a1c < 5.7) return { label: "Normal range", color: "#2dd4bf" };
+  if (a1c < 5.7) return { label: "Normal range", color: "#0C9468" };
   if (a1c < 6.5) return { label: "Prediabetes range", color: "#fbbf6b" };
   return { label: "Diabetes range", color: "#f59e0b" };
 }
@@ -71,14 +71,14 @@ export default function HbA1cExplained() {
           <div className="flex flex-wrap justify-center gap-2">
             {Array.from({ length: 20 }).map((_, i) => (
               <svg key={i} width="22" height="22" viewBox="0 0 22 22">
-                <circle cx="11" cy="11" r="9" fill="#7f1d1d" />
+                <circle cx="11" cy="11" r="9" fill="#E8998A" />
                 <motion.circle
                   cx="11" cy="11" r="9"
                   fill="#fb923c"
                   animate={{ opacity: coating * 0.85 }}
                   transition={{ duration: 0.3 }}
                 />
-                <circle cx="11" cy="11" r="4" fill="#450a0a" opacity="0.5" />
+                <circle cx="11" cy="11" r="4" fill="#8B3A2E" opacity="0.4" />
               </svg>
             ))}
           </div>

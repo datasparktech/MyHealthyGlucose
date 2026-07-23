@@ -52,23 +52,23 @@ export default function Type1VsType2() {
             <motion.ellipse
               cx="110" cy="150" rx="70" ry="48"
               animate={{
-                fill: isT1 ? "#3a2020" : "#2dd4bf",
-                stroke: isT1 ? "#7f3a3a" : "#5eead4",
+                fill: isT1 ? "#F4C7C0" : "#0C9468",
+                stroke: isT1 ? "#C2704F" : "#0FA377",
               }}
               strokeWidth="2"
               transition={{ duration: 0.4 }}
             />
-            <text x="110" y="150" textAnchor="middle" fontSize="13" fontWeight="600" fill={isT1 ? "#fca5a5" : "#0a1520"}>
+            <text x="110" y="150" textAnchor="middle" fontSize="13" fontWeight="600" fill={isT1 ? "#8B3A2E" : "#F1FAF7"}>
               Pancreas
             </text>
-            <text x="110" y="168" textAnchor="middle" fontSize="10" fill={isT1 ? "#fca5a5" : "#0a1520"}>
+            <text x="110" y="168" textAnchor="middle" fontSize="10" fill={isT1 ? "#8B3A2E" : "#F1FAF7"}>
               {isT1 ? "attacked / inactive" : "producing insulin"}
             </text>
           </g>
 
           {/* Blood vessel */}
-          <rect x="220" y="110" width="360" height="80" rx="40" fill="#1e2b38" stroke="#334155" strokeWidth="2" />
-          <text x="400" y="100" textAnchor="middle" fontSize="12" fill="#8b95a5" fontWeight="600" letterSpacing="0.5">
+          <rect x="220" y="110" width="360" height="80" rx="40" fill="#E6F3EE" stroke="#A9CBC0" strokeWidth="2" />
+          <text x="400" y="100" textAnchor="middle" fontSize="12" fill="#5C7C76" fontWeight="600" letterSpacing="0.5">
             BLOODSTREAM
           </text>
 
@@ -91,7 +91,7 @@ export default function Type1VsType2() {
                 <motion.rect
                   key={i}
                   width="16" height="9" rx="3"
-                  fill="#5eead4"
+                  fill="#0FA377"
                   initial={{ x: 150, y: 145, opacity: 0 }}
                   animate={{ x: 590, y: 140 + i * 20, opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -102,21 +102,21 @@ export default function Type1VsType2() {
 
           {/* Cell */}
           <g>
-            <circle cx="700" cy="150" r="80" fill="#141e29" stroke="#334155" strokeWidth="2" />
-            <text x="700" y="230" textAnchor="middle" fontSize="13" fontWeight="600" fill="#8b95a5">
+            <circle cx="700" cy="150" r="80" fill="#DCEEE8" stroke="#A9CBC0" strokeWidth="2" />
+            <text x="700" y="230" textAnchor="middle" fontSize="13" fontWeight="600" fill="#5C7C76">
               Cell
             </text>
             {/* Gate — closed for type 1 (no insulin at all); "resistant" (barely budging) for type 2 */}
             <motion.rect
               x="612" y="135" width="16" height="30" rx="4"
               animate={{
-                fill: isT1 ? "#475569" : "#94a3b8",
+                fill: isT1 ? "#8FB0A6" : "#B7D3CA",
                 width: isT1 ? 16 : 19,
               }}
               transition={{ duration: 0.4 }}
             />
             <motion.text
-              x="700" y="270" textAnchor="middle" fontSize="10" fill="#8b95a5"
+              x="700" y="270" textAnchor="middle" fontSize="10" fill="#5C7C76"
               key={type}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

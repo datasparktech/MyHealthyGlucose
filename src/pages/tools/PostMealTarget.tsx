@@ -41,9 +41,9 @@ export default function PostMealTarget() {
   const val = parseFloat(reading);
   let verdict: { text: string; color: string } | null = null;
   if (val > 0 && group === "general") {
-    if (val < 70) verdict = { text: "Below the typical range (possible low) — treat if you have symptoms and follow your plan.", color: "#f59e0b" };
-    else if (val <= 180) verdict = { text: "Within the general post-meal target for most adults.", color: "#2dd4bf" };
-    else verdict = { text: "Above the general post-meal target of 180 mg/dL. One reading isn't a trend — look at patterns with your care team.", color: "#f59e0b" };
+    if (val < 70) verdict = { text: "Below the typical range (possible low) — treat if you have symptoms and follow your plan.", color: "#B8481B" };
+    else if (val <= 180) verdict = { text: "Within the general post-meal target for most adults.", color: "#0B8161" };
+    else verdict = { text: "Above the general post-meal target of 180 mg/dL. One reading isn't a trend — look at patterns with your care team.", color: "#B8481B" };
   }
 
   return (

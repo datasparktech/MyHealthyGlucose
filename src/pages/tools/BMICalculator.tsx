@@ -18,27 +18,27 @@ function categorize(bmi: number): Category {
     return {
       label: "Underweight",
       range: "below 18.5",
-      color: "#5eead4",
+      color: "#0FA377",
       note: "Being underweight has its own health considerations — a doctor can help you find a healthy range.",
     };
   if (bmi < 25)
     return {
       label: "Healthy weight",
       range: "18.5 – 24.9",
-      color: "#2dd4bf",
+      color: "#0B8161",
       note: "This range is associated with lower risk of type 2 diabetes and related conditions.",
     };
   if (bmi < 30)
     return {
       label: "Overweight",
       range: "25 – 29.9",
-      color: "#fbbf6b",
+      color: "#C85A2A",
       note: "Carrying extra weight can raise the risk of type 2 diabetes. Small, sustained changes help more than crash diets.",
     };
   return {
     label: "Obese",
     range: "30 and above",
-    color: "#f59e0b",
+    color: "#B8481B",
     note: "This range is linked with higher risk of type 2 diabetes. A doctor or dietitian can help build a realistic plan.",
   };
 }

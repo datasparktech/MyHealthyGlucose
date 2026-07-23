@@ -71,7 +71,7 @@ export default function CarbCalculator() {
                 initial={{ opacity: 0, y: -6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
-                className="absolute z-10 mt-2 w-full overflow-hidden rounded-xl border border-line bg-card shadow-2xl shadow-black/50"
+                className="absolute z-10 mt-2 w-full overflow-hidden rounded-xl border border-line bg-card shadow-2xl shadow-black/10"
               >
                 {matches.map((f) => (
                   <li key={f.name}>

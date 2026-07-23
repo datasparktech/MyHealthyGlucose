@@ -56,7 +56,7 @@ export default function ToolsHub() {
             <Reveal key={tr.to} delay={i * 0.08}>
               <Link
                 to={tr.to}
-                className="group glass flex h-full flex-col rounded-2xl p-7 transition-colors duration-300 hover:bg-card-hover"
+                className="group glass card-lift flex h-full flex-col rounded-2xl p-7 transition-colors duration-300 hover:bg-card-hover"
               >
                 <div className="flex items-start justify-between">
                   <span className="text-3xl">{tr.icon}</span>

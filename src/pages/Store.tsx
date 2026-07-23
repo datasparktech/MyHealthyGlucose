@@ -10,6 +10,7 @@ import {
 import { fetchActiveProducts, type DbStoreProduct } from "../lib/store";
 import { isSupabaseConfigured } from "../lib/supabase";
 import { STORE_PRODUCTS as SEED_PRODUCTS, type StoreProduct } from "../data/storeProducts";
+import { IMAGES } from "../data/images";
 
 const COUNTRY_LABEL: Record<StoreCountry, string> = {
   US: "🇺🇸 United States",
@@ -96,6 +97,15 @@ export default function Store() {
           <p className="mx-auto mt-4 max-w-xl text-ink-dim">
             Meters, strips, lancets, and more — priced and linked for where you shop.
           </p>
+        </Reveal>
+
+        <Reveal delay={0.06} className="mt-8 overflow-hidden rounded-[1.5rem] ring-1 ring-line">
+          <img
+            src={IMAGES.mealPrep}
+            alt="Organized health and meal-prep essentials"
+            loading="lazy"
+            className="aspect-[21/9] w-full object-cover"
+          />
         </Reveal>
 
         {/* Country selector */}
@@ -193,7 +203,7 @@ function ProductCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.5, delay }}
-      className="group glass flex flex-col rounded-2xl p-6 transition-colors hover:bg-card-hover"
+      className="group glass card-lift flex flex-col rounded-2xl p-6 transition-colors hover:bg-card-hover"
     >
       <span className="w-fit rounded-full bg-teal-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-teal-300 ring-1 ring-teal-400/20">
         {product.category}
