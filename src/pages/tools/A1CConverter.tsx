@@ -1,5 +1,6 @@
 import { useState, Fragment } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ToolShell from "../../components/ToolShell";
 import Disclaimer from "../../components/Disclaimer";
 
@@ -26,6 +27,7 @@ const reference = [
 ];
 
 export default function A1CConverter() {
+  const { t } = useTranslation();
   const [mode, setMode] = useState<"fromA1c" | "toA1c">("fromA1c");
   const [unit, setUnit] = useState<Unit>("mgdl");
   const [a1c, setA1c] = useState("");
@@ -51,9 +53,9 @@ export default function A1CConverter() {
 
   return (
     <ToolShell
-      eyebrow="A1C ↔ Average Glucose"
-      title="Translate your A1C into everyday numbers."
-      intro="HbA1c reflects your average glucose over ~3 months. This converts between the two using the standard ADAG formula."
+      eyebrow={t("tools.pages.a1c.eyebrow")}
+      title={t("tools.pages.a1c.title")}
+      intro={t("tools.pages.a1c.intro")}
     >
       <div className="glass rounded-2xl p-6 sm:p-8">
         {/* Mode toggle */}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ToolShell from "../../components/ToolShell";
 import Disclaimer from "../../components/Disclaimer";
 
@@ -92,6 +93,7 @@ function bandFor(score: number) {
 }
 
 export default function RiskQuiz() {
+  const { t } = useTranslation();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [done, setDone] = useState(false);
@@ -123,9 +125,9 @@ export default function RiskQuiz() {
 
   return (
     <ToolShell
-      eyebrow="Diabetes Risk Quiz"
-      title="A quick read on your risk factors."
-      intro="Six questions, modeled on the risk factors clinicians look at. It&rsquo;s a prompt to talk to a doctor — not a diagnosis."
+      eyebrow={t("tools.pages.riskQuiz.eyebrow")}
+      title={t("tools.pages.riskQuiz.title")}
+      intro={t("tools.pages.riskQuiz.intro")}
     >
       <div className="glass rounded-2xl p-6 sm:p-8">
         {!done ? (

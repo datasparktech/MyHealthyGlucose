@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ToolShell from "../../components/ToolShell";
 import Disclaimer from "../../components/Disclaimer";
 
 export default function InsulinRatioCalculator() {
+  const { t } = useTranslation();
   const [carbs, setCarbs] = useState("");
   const [ratio, setRatio] = useState("");
   const [correction, setCorrection] = useState("");
@@ -32,9 +34,9 @@ export default function InsulinRatioCalculator() {
 
   return (
     <ToolShell
-      eyebrow="Insulin-to-Carb Ratio"
-      title="Estimate a mealtime insulin dose."
-      intro="For people who dose insulin by carb counting. This is an educational estimator — your real ratios and doses must come from your care team."
+      eyebrow={t("tools.pages.insulinRatio.eyebrow")}
+      title={t("tools.pages.insulinRatio.title")}
+      intro={t("tools.pages.insulinRatio.intro")}
     >
       <div className="glass rounded-2xl p-6 sm:p-8">
         <div className="rounded-xl bg-orange-500/10 px-4 py-3 text-sm text-orange-200 ring-1 ring-orange-400/20">

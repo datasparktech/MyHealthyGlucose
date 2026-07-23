@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ToolShell from "../../components/ToolShell";
 import Disclaimer from "../../components/Disclaimer";
 import {
@@ -10,6 +11,7 @@ import {
 } from "../../lib/cgmParser";
 
 export default function CGMAnalyzer() {
+  const { t } = useTranslation();
   const [readings, setReadings] = useState<GlucoseReading[]>([]);
   const [stats, setStats] = useState<CGMStats | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -53,9 +55,9 @@ export default function CGMAnalyzer() {
 
   return (
     <ToolShell
-      eyebrow="CGM Data Visualizer"
-      title="See your 14-day glucose curve — instantly, privately."
-      intro="Drop in the CSV export from your Dexcom, FreeStyle Libre, or Contour device and get an instant visual summary. Everything happens in your browser — your data never leaves your device or gets uploaded anywhere."
+      eyebrow={t("tools.pages.cgm.eyebrow")}
+      title={t("tools.pages.cgm.title")}
+      intro={t("tools.pages.cgm.intro")}
     >
       <div className="glass rounded-2xl p-6 sm:p-8">
         {!stats ? (

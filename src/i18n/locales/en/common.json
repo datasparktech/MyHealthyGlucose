@@ -34,5 +34,53 @@
     "getStarted": "Get started",
     "comingSoon": "Coming soon",
     "loading": "Loading…"
+  },
+  "tools": {
+    "shell": {
+      "backToAll": "← All tools",
+      "trackTitle": "Track this automatically in the app",
+      "trackBody": "MyHealthyGlucose logs carbs, glucose, BP and meds around real food."
+    },
+    "disclaimer": {
+      "label": "For education only.",
+      "body": "These estimates are not medical advice and don't diagnose or treat any condition. Always talk to your doctor about your own numbers and treatment."
+    },
+    "hub": {
+      "eyebrow": "Free tools",
+      "title": "Calculators worth bookmarking.",
+      "subtitle": "Fast, free, and no login required. Every tool works anonymously — nothing you enter is stored.",
+      "imageCaption": "Plan meals, count carbs, and understand your numbers — in a couple of taps.",
+      "open": "Open →",
+      "suggestPrefix": "More tools are added regularly — have one in mind?",
+      "suggestCta": "Suggest it →"
+    },
+    "cards": {
+      "carb": { "title": "Carb Calculator", "body": "Search Indian, Western and staple foods and build a meal to see the running carb total.", "tag": "Most popular" },
+      "bmi": { "title": "BMI Calculator", "body": "Estimate your Body Mass Index with real context on what it means for diabetes risk." },
+      "a1c": { "title": "A1C ↔ Average Glucose", "body": "Translate an HbA1c percentage into an everyday average glucose number, and back." },
+      "riskQuiz": { "title": "Diabetes Risk Quiz", "body": "Six quick questions on the risk factors clinicians look at — a prompt to see a doctor." },
+      "glycemicIndex": { "title": "Glycemic Index & Load", "body": "See how fast a food raises blood sugar — and the glycemic load for a real serving size." },
+      "mealSimulator": { "title": "Meal Glycemic Simulator", "body": "Build a full meal and see its estimated glucose impact, with smart lower-GI swaps." },
+      "cgmAnalyzer": { "title": "CGM Data Visualizer", "body": "Drop in a Dexcom/Libre CSV to see your glucose curve and time-in-range — 100% private." },
+      "carbTarget": { "title": "Daily Carb & Fiber Target", "body": "Estimate your daily carbohydrate and fiber targets from your calorie intake." },
+      "postMealTarget": { "title": "Post-Meal Target Finder", "body": "See the general after-meal glucose targets and check a reading against them." },
+      "insulinRatio": { "title": "Insulin-to-Carb Ratio", "body": "Estimate a mealtime insulin dose from your carb ratio and correction factor." },
+      "waterIntake": { "title": "Hydration Calculator", "body": "A daily water target based on your weight and activity level." },
+      "emergencyGuide": { "title": "Emergency Guide", "body": "Clear, printable steps for high and low blood sugar emergencies." }
+    },
+    "pages": {
+      "a1c": { "eyebrow": "A1C ↔ Average Glucose", "title": "Translate your A1C into everyday numbers.", "intro": "HbA1c reflects your average glucose over ~3 months. This converts between the two using the standard ADAG formula." },
+      "bmi": { "eyebrow": "BMI Calculator", "title": "Body Mass Index — with real context.", "intro": "A quick estimate of where your weight sits, plus what it means for diabetes risk. No login, no data stored." },
+      "cgm": { "eyebrow": "CGM Data Visualizer", "title": "See your 14-day glucose curve — instantly, privately.", "intro": "Drop in the CSV export from your Dexcom, FreeStyle Libre, or Contour device and get an instant visual summary. Everything happens in your browser — your data never leaves your device or gets uploaded anywhere." },
+      "carbCalc": { "eyebrow": "Carb Calculator", "title": "Count carbs around real food.", "intro": "Search common dishes — Indian, Western and everyday staples — and build a meal to see the running carb total." },
+      "carbTarget": { "eyebrow": "Daily Carb & Fiber Target", "title": "How many carbs and how much fiber per day?", "intro": "A general starting estimate for daily carbohydrate and fiber, based on your calorie intake. Personal targets vary — use this as a conversation starter with your dietitian." },
+      "emergency": { "eyebrow": "Emergency Guide", "title": "What to do in a blood sugar emergency.", "intro": "Quick, clear steps for hypoglycemia (too low) and hyperglycemia (too high). Read it now so it's familiar before you ever need it — and always follow your own care plan." },
+      "gi": { "eyebrow": "Glycemic Index & Load", "title": "How fast does a food raise blood sugar?", "intro": "Glycemic index (GI) ranks how quickly a food raises glucose. Glycemic load (GL) adjusts that for a real serving size — often the more useful number." },
+      "insulinRatio": { "eyebrow": "Insulin-to-Carb Ratio", "title": "Estimate a mealtime insulin dose.", "intro": "For people who dose insulin by carb counting. This is an educational estimator — your real ratios and doses must come from your care team." },
+      "mealSim": { "eyebrow": "Meal Glycemic Simulator", "title": "Build a meal, see its glucose impact.", "intro": "Add foods to construct a full meal and get its estimated glycemic load, carbs, protein and fat — plus smart swaps to lower the glucose peak." },
+      "postMeal": { "eyebrow": "Post-Meal Glucose Target Finder", "title": "Is my after-meal reading in range?", "intro": "See the general post-meal glucose targets for different groups, and check a reading against them. These are educational reference points — your personal targets come from your doctor." },
+      "riskQuiz": { "eyebrow": "Diabetes Risk Quiz", "title": "A quick read on your risk factors.", "intro": "Six questions, modeled on the risk factors clinicians look at. It's a prompt to talk to a doctor — not a diagnosis." },
+      "water": { "eyebrow": "Hydration Calculator", "title": "How much water should you drink?", "intro": "Staying hydrated matters for everyone, and especially when managing blood sugar. This gives a general daily target based on your weight and activity." }
+    }
   }
 }

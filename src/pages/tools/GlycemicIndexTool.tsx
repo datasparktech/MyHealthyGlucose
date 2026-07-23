@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ToolShell from "../../components/ToolShell";
 import Disclaimer from "../../components/Disclaimer";
 
@@ -48,6 +49,7 @@ function glBand(gl: number) {
 }
 
 export default function GlycemicIndexTool() {
+  const { t } = useTranslation();
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<GIFood | null>(null);
 
@@ -64,9 +66,9 @@ export default function GlycemicIndexTool() {
 
   return (
     <ToolShell
-      eyebrow="Glycemic Index & Load"
-      title="How fast does a food raise blood sugar?"
-      intro="Glycemic index (GI) ranks how quickly a food raises glucose. Glycemic load (GL) adjusts that for a real serving size — often the more useful number."
+      eyebrow={t("tools.pages.gi.eyebrow")}
+      title={t("tools.pages.gi.title")}
+      intro={t("tools.pages.gi.intro")}
     >
       <div className="glass rounded-2xl p-6 sm:p-8">
         <label className="relative block">

@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ToolShell from "../../components/ToolShell";
 import Disclaimer from "../../components/Disclaimer";
 import { FOODS, type FoodItem } from "../../data/foods";
@@ -19,6 +20,7 @@ const cuisineColors: Record<string, string> = {
 };
 
 export default function CarbCalculator() {
+  const { t } = useTranslation();
   const [query, setQuery] = useState("");
   const [meal, setMeal] = useState<Entry[]>([]);
   const [nextId, setNextId] = useState(1);
@@ -48,9 +50,9 @@ export default function CarbCalculator() {
 
   return (
     <ToolShell
-      eyebrow="Carb Calculator"
-      title="Count carbs around real food."
-      intro="Search common dishes — Indian, Western and everyday staples — and build a meal to see the running carb total."
+      eyebrow={t("tools.pages.carbCalc.eyebrow")}
+      title={t("tools.pages.carbCalc.title")}
+      intro={t("tools.pages.carbCalc.intro")}
     >
       <div className="glass rounded-2xl p-6 sm:p-8">
         {/* Search */}

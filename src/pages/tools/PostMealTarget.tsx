@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ToolShell from "../../components/ToolShell";
 import Disclaimer from "../../components/Disclaimer";
 
@@ -30,6 +31,7 @@ const TARGETS: Record<
 };
 
 export default function PostMealTarget() {
+  const { t } = useTranslation();
   const [group, setGroup] = useState<Group>("general");
   const [reading, setReading] = useState("");
 
@@ -46,9 +48,9 @@ export default function PostMealTarget() {
 
   return (
     <ToolShell
-      eyebrow="Post-Meal Glucose Target Finder"
-      title="Is my after-meal reading in range?"
-      intro="See the general post-meal glucose targets for different groups, and check a reading against them. These are educational reference points — your personal targets come from your doctor."
+      eyebrow={t("tools.pages.postMeal.eyebrow")}
+      title={t("tools.pages.postMeal.title")}
+      intro={t("tools.pages.postMeal.intro")}
     >
       <div className="glass rounded-2xl p-6 sm:p-8">
         <span className="mb-2 block text-sm text-muted">Which best describes you?</span>

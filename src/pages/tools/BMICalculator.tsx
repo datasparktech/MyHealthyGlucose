@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ToolShell from "../../components/ToolShell";
 import Disclaimer from "../../components/Disclaimer";
 
@@ -43,6 +44,7 @@ function categorize(bmi: number): Category {
 }
 
 export default function BMICalculator() {
+  const { t } = useTranslation();
   const [unit, setUnit] = useState<Unit>("metric");
   const [heightCm, setHeightCm] = useState("");
   const [weightKg, setWeightKg] = useState("");
@@ -73,9 +75,9 @@ export default function BMICalculator() {
 
   return (
     <ToolShell
-      eyebrow="BMI Calculator"
-      title="Body Mass Index — with real context."
-      intro="A quick estimate of where your weight sits, plus what it means for diabetes risk. No login, no data stored."
+      eyebrow={t("tools.pages.bmi.eyebrow")}
+      title={t("tools.pages.bmi.title")}
+      intro={t("tools.pages.bmi.intro")}
     >
       <div className="glass rounded-2xl p-6 sm:p-8">
         {/* Unit toggle */}

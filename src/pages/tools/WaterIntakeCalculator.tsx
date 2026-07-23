@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ToolShell from "../../components/ToolShell";
 import Disclaimer from "../../components/Disclaimer";
 
 type Unit = "metric" | "imperial";
 
 export default function WaterIntakeCalculator() {
+  const { t } = useTranslation();
   const [unit, setUnit] = useState<Unit>("metric");
   const [weight, setWeight] = useState("");
   const [activity, setActivity] = useState(0); // extra minutes of exercise
@@ -24,9 +26,9 @@ export default function WaterIntakeCalculator() {
 
   return (
     <ToolShell
-      eyebrow="Hydration Calculator"
-      title="How much water should you drink?"
-      intro="Staying hydrated matters for everyone, and especially when managing blood sugar. This gives a general daily target based on your weight and activity."
+      eyebrow={t("tools.pages.water.eyebrow")}
+      title={t("tools.pages.water.title")}
+      intro={t("tools.pages.water.intro")}
     >
       <div className="glass rounded-2xl p-6 sm:p-8">
         <div className="mb-6 inline-flex rounded-full bg-bg-elevated/60 p-1 ring-1 ring-line">

@@ -34,5 +34,53 @@
     "getStarted": "Comenzar",
     "comingSoon": "Próximamente",
     "loading": "Cargando…"
+  },
+  "tools": {
+    "shell": {
+      "backToAll": "← Todas las herramientas",
+      "trackTitle": "Regístralo automáticamente en la app",
+      "trackBody": "MyHealthyGlucose registra carbohidratos, glucosa, presión arterial y medicamentos junto a comida real."
+    },
+    "disclaimer": {
+      "label": "Solo con fines educativos.",
+      "body": "Estas estimaciones no son consejo médico y no diagnostican ni tratan ninguna condición. Habla siempre con tu médico sobre tus propios valores y tratamiento."
+    },
+    "hub": {
+      "eyebrow": "Herramientas gratuitas",
+      "title": "Calculadoras que vale la pena guardar.",
+      "subtitle": "Rápidas, gratuitas y sin necesidad de iniciar sesión. Cada herramienta funciona de forma anónima — nada de lo que ingreses se guarda.",
+      "imageCaption": "Planifica comidas, cuenta carbohidratos y entiende tus números — en un par de toques.",
+      "open": "Abrir →",
+      "suggestPrefix": "Añadimos herramientas nuevas con regularidad — ¿tienes alguna en mente?",
+      "suggestCta": "Sugiérela →"
+    },
+    "cards": {
+      "carb": { "title": "Calculadora de Carbohidratos", "body": "Busca alimentos indios, occidentales y básicos, y arma una comida para ver el total de carbohidratos.", "tag": "Más popular" },
+      "bmi": { "title": "Calculadora de IMC", "body": "Estima tu Índice de Masa Corporal con contexto real sobre lo que significa para el riesgo de diabetes." },
+      "a1c": { "title": "A1C ↔ Glucosa Promedio", "body": "Convierte un porcentaje de HbA1c en un número de glucosa promedio cotidiano, y viceversa." },
+      "riskQuiz": { "title": "Cuestionario de Riesgo de Diabetes", "body": "Seis preguntas rápidas sobre los factores de riesgo que evalúan los médicos — un impulso para consultar a un doctor." },
+      "glycemicIndex": { "title": "Índice y Carga Glucémica", "body": "Ve qué tan rápido un alimento eleva el azúcar en sangre — y la carga glucémica para una porción real." },
+      "mealSimulator": { "title": "Simulador Glucémico de Comidas", "body": "Arma una comida completa y ve su impacto glucémico estimado, con sustituciones inteligentes de menor IG." },
+      "cgmAnalyzer": { "title": "Visualizador de Datos CGM", "body": "Sube un CSV de Dexcom/Libre para ver tu curva de glucosa y tiempo en rango — 100% privado." },
+      "carbTarget": { "title": "Meta Diaria de Carbohidratos y Fibra", "body": "Estima tus metas diarias de carbohidratos y fibra según tu ingesta calórica." },
+      "postMealTarget": { "title": "Buscador de Meta Post-Comida", "body": "Consulta las metas generales de glucosa después de comer y verifica una lectura frente a ellas." },
+      "insulinRatio": { "title": "Relación Insulina-Carbohidratos", "body": "Estima una dosis de insulina para una comida según tu relación de carbohidratos y factor de corrección." },
+      "waterIntake": { "title": "Calculadora de Hidratación", "body": "Una meta diaria de agua según tu peso y nivel de actividad." },
+      "emergencyGuide": { "title": "Guía de Emergencia", "body": "Pasos claros e imprimibles para emergencias de azúcar en sangre alta y baja." }
+    },
+    "pages": {
+      "a1c": { "eyebrow": "A1C ↔ Glucosa Promedio", "title": "Convierte tu A1C en números cotidianos.", "intro": "La HbA1c refleja tu glucosa promedio de los últimos ~3 meses. Esto convierte entre ambos usando la fórmula estándar ADAG." },
+      "bmi": { "eyebrow": "Calculadora de IMC", "title": "Índice de Masa Corporal — con contexto real.", "intro": "Una estimación rápida de dónde se ubica tu peso, además de lo que significa para el riesgo de diabetes. Sin inicio de sesión, sin datos guardados." },
+      "cgm": { "eyebrow": "Visualizador de Datos CGM", "title": "Ve tu curva de glucosa de 14 días — al instante y en privado.", "intro": "Sube el archivo CSV exportado de tu dispositivo Dexcom, FreeStyle Libre o Contour y obtén un resumen visual instantáneo. Todo ocurre en tu navegador — tus datos nunca salen de tu dispositivo ni se suben a ningún lado." },
+      "carbCalc": { "eyebrow": "Calculadora de Carbohidratos", "title": "Cuenta carbohidratos con comida real.", "intro": "Busca platillos comunes — indios, occidentales y básicos del día a día — y arma una comida para ver el total de carbohidratos." },
+      "carbTarget": { "eyebrow": "Meta Diaria de Carbohidratos y Fibra", "title": "¿Cuántos carbohidratos y cuánta fibra al día?", "intro": "Una estimación inicial general de carbohidratos y fibra diarios, según tu ingesta calórica. Las metas personales varían — úsalo como punto de partida para hablar con tu nutricionista." },
+      "emergency": { "eyebrow": "Guía de Emergencia", "title": "Qué hacer en una emergencia de azúcar en sangre.", "intro": "Pasos claros y rápidos para la hipoglucemia (muy baja) y la hiperglucemia (muy alta). Léelo ahora para que te resulte familiar cuando lo necesites — y sigue siempre tu propio plan de cuidado." },
+      "gi": { "eyebrow": "Índice y Carga Glucémica", "title": "¿Qué tan rápido un alimento eleva el azúcar en sangre?", "intro": "El índice glucémico (IG) clasifica qué tan rápido un alimento eleva la glucosa. La carga glucémica (CG) ajusta eso para una porción real — a menudo el número más útil." },
+      "insulinRatio": { "eyebrow": "Relación Insulina-Carbohidratos", "title": "Estima una dosis de insulina para una comida.", "intro": "Para personas que dosifican insulina contando carbohidratos. Este es un estimador educativo — tus proporciones y dosis reales deben venir de tu equipo de cuidado." },
+      "mealSim": { "eyebrow": "Simulador Glucémico de Comidas", "title": "Arma una comida, ve su impacto glucémico.", "intro": "Añade alimentos para armar una comida completa y obtén su carga glucémica, carbohidratos, proteína y grasa estimados — además de sustituciones inteligentes para reducir el pico de glucosa." },
+      "postMeal": { "eyebrow": "Buscador de Meta de Glucosa Post-Comida", "title": "¿Mi lectura después de comer está en rango?", "intro": "Consulta las metas generales de glucosa después de comer para diferentes grupos, y verifica una lectura frente a ellas. Son puntos de referencia educativos — tus metas personales las define tu médico." },
+      "riskQuiz": { "eyebrow": "Cuestionario de Riesgo de Diabetes", "title": "Un vistazo rápido a tus factores de riesgo.", "intro": "Seis preguntas, basadas en los factores de riesgo que evalúan los médicos. Es un impulso para hablar con un doctor — no un diagnóstico." },
+      "water": { "eyebrow": "Calculadora de Hidratación", "title": "¿Cuánta agua deberías beber?", "intro": "Mantenerte hidratado importa para todos, y especialmente al manejar el azúcar en sangre. Esto da una meta diaria general según tu peso y actividad." }
+    }
   }
 }

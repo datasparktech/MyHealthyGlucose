@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ToolShell from "../../components/ToolShell";
 import Disclaimer from "../../components/Disclaimer";
 
 export default function CarbTargetCalculator() {
+  const { t } = useTranslation();
   const [calories, setCalories] = useState("2000");
   const [carbPct, setCarbPct] = useState(45); // % of calories from carbs
 
@@ -18,9 +20,9 @@ export default function CarbTargetCalculator() {
 
   return (
     <ToolShell
-      eyebrow="Daily Carb & Fiber Target"
-      title="How many carbs and how much fiber per day?"
-      intro="A general starting estimate for daily carbohydrate and fiber, based on your calorie intake. Personal targets vary — use this as a conversation starter with your dietitian."
+      eyebrow={t("tools.pages.carbTarget.eyebrow")}
+      title={t("tools.pages.carbTarget.title")}
+      intro={t("tools.pages.carbTarget.intro")}
     >
       <div className="glass rounded-2xl p-6 sm:p-8">
         <label className="block">

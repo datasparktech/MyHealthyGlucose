@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Reveal from "./Reveal";
 
 export default function ToolShell({
@@ -13,6 +14,7 @@ export default function ToolShell({
   intro: string;
   children: ReactNode;
 }) {
+  const { t } = useTranslation();
   return (
     <div className="px-6 py-14">
       <div className="mx-auto max-w-3xl">
@@ -21,7 +23,7 @@ export default function ToolShell({
             to="/tools"
             className="text-sm font-medium text-muted transition-colors hover:text-teal-300"
           >
-            ← All tools
+            {t("tools.shell.backToAll")}
           </Link>
           <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-teal-400">
             {eyebrow}
@@ -40,10 +42,10 @@ export default function ToolShell({
           <div className="glass flex flex-col items-start gap-3 rounded-2xl p-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="font-display text-base font-semibold text-ink">
-                Track this automatically in the app
+                {t("tools.shell.trackTitle")}
               </p>
               <p className="mt-1 text-sm text-muted">
-                MyHealthyGlucose logs carbs, glucose, BP and meds around real food.
+                {t("tools.shell.trackBody")}
               </p>
             </div>
             <a
@@ -52,7 +54,7 @@ export default function ToolShell({
               rel="noreferrer"
               className="shrink-0 rounded-full bg-teal-500 px-5 py-2.5 text-sm font-semibold text-bg transition-transform hover:scale-105 hover:bg-teal-400"
             >
-              Get the app
+              {t("nav.getApp")}
             </a>
           </div>
         </Reveal>

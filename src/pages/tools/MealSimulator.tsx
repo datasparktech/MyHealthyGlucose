@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ToolShell from "../../components/ToolShell";
 import Disclaimer from "../../components/Disclaimer";
 import { FOOD_DB, glycemicLoad, findSwaps, type Food } from "../../data/foodDb";
@@ -17,6 +18,7 @@ function glBand(gl: number) {
 }
 
 export default function MealSimulator() {
+  const { t } = useTranslation();
   const [query, setQuery] = useState("");
   const [meal, setMeal] = useState<MealItem[]>([]);
   const [nextId, setNextId] = useState(1);
@@ -73,9 +75,9 @@ export default function MealSimulator() {
 
   return (
     <ToolShell
-      eyebrow="Meal Glycemic Simulator"
-      title="Build a meal, see its glucose impact."
-      intro="Add foods to construct a full meal and get its estimated glycemic load, carbs, protein and fat — plus smart swaps to lower the glucose peak."
+      eyebrow={t("tools.pages.mealSim.eyebrow")}
+      title={t("tools.pages.mealSim.title")}
+      intro={t("tools.pages.mealSim.intro")}
     >
       <div className="glass rounded-2xl p-6 sm:p-8">
         <label className="relative block">

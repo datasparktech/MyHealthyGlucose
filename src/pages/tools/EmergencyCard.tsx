@@ -1,12 +1,14 @@
+import { useTranslation } from "react-i18next";
 import ToolShell from "../../components/ToolShell";
 import Reveal from "../../components/Reveal";
 
 export default function EmergencyCard() {
+  const { t } = useTranslation();
   return (
     <ToolShell
-      eyebrow="Emergency Guide"
-      title="What to do in a blood sugar emergency."
-      intro="Quick, clear steps for hypoglycemia (too low) and hyperglycemia (too high). Read it now so it's familiar before you ever need it — and always follow your own care plan."
+      eyebrow={t("tools.pages.emergency.eyebrow")}
+      title={t("tools.pages.emergency.title")}
+      intro={t("tools.pages.emergency.intro")}
     >
       <div className="space-y-6">
         {/* Hypo */}
