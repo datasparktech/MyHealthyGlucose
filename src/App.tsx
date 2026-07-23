@@ -25,6 +25,10 @@ const Glossary = lazy(() => import("./pages/Glossary"));
 const HowInsulinWorks = lazy(() => import("./pages/explainers/HowInsulinWorks"));
 const DigestionAndGlucose = lazy(() => import("./pages/explainers/DigestionAndGlucose"));
 const Type1VsType2 = lazy(() => import("./pages/explainers/Type1VsType2"));
+const ComplicationsBodyMap = lazy(() => import("./pages/explainers/ComplicationsBodyMap"));
+const DayInTheLife = lazy(() => import("./pages/explainers/DayInTheLife"));
+const GlycemicRace = lazy(() => import("./pages/explainers/GlycemicRace"));
+const HbA1cExplained = lazy(() => import("./pages/explainers/HbA1cExplained"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const BMICalculator = lazy(() => import("./pages/tools/BMICalculator"));
@@ -102,6 +106,10 @@ export default function App() {
             <Route path="/info/how-insulin-works" element={<HowInsulinWorks />} />
             <Route path="/info/digestion-and-glucose" element={<DigestionAndGlucose />} />
             <Route path="/info/type-1-vs-type-2" element={<Type1VsType2 />} />
+            <Route path="/info/complications-body-map" element={<ComplicationsBodyMap />} />
+            <Route path="/info/day-in-the-life" element={<DayInTheLife />} />
+            <Route path="/info/glycemic-race" element={<GlycemicRace />} />
+            <Route path="/info/hba1c-explained" element={<HbA1cExplained />} />
             <Route path="/info/:slug" element={<Guide />} />
 
             <Route path="/blog" element={<Blog />} />

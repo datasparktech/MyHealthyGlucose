@@ -24,4 +24,28 @@ export const EXPLAINERS: ExplainerMeta[] = [
     summary: "An interactive side-by-side of what's actually happening in the body.",
     icon: "⚖️",
   },
+  {
+    slug: "complications-body-map",
+    title: "Where Complications Happen",
+    summary: "Tap around an interactive body map to see where diabetes affects the body — and how to lower the risk.",
+    icon: "🧍",
+  },
+  {
+    slug: "day-in-the-life",
+    title: "A Day in the Life of Blood Sugar",
+    summary: "Press play and watch a full 24-hour glucose curve respond to meals, exercise, and sleep.",
+    icon: "🕐",
+  },
+  {
+    slug: "glycemic-race",
+    title: "The Glycemic Index Race",
+    summary: "Pick foods and watch their glucose curves race side by side.",
+    icon: "🏁",
+  },
+  {
+    slug: "hba1c-explained",
+    title: "What HbA1c Actually Measures",
+    summary: "Drag a live slider to see how average glucose becomes your A1C percentage.",
+    icon: "🩸",
+  },
 ];
