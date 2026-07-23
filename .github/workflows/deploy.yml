@@ -37,7 +37,6 @@ jobs:
           VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
           VITE_FORMSPREE_ID: ${{ vars.VITE_FORMSPREE_ID }}
           VITE_CF_ANALYTICS_TOKEN: ${{ vars.VITE_CF_ANALYTICS_TOKEN }}
-          VITE_DONATION_LINK: ${{ vars.VITE_DONATION_LINK }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

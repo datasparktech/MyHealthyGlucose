@@ -11,11 +11,11 @@ export default function GiveBackBand() {
               Give back
             </p>
             <h2 className="mt-2 font-display text-xl font-semibold text-ink sm:text-2xl">
-              Help fund a free diabetes kit for someone who needs one.
+              Help fund diabetes care through our nonprofit partner.
             </h2>
             <p className="mt-1.5 text-sm text-muted">
-              Test strips and meters are out of reach for a lot of people. Your donation helps
-              close that gap.
+              Test strips and meters are out of reach for a lot of people. Your donation goes
+              directly to a registered NGO doing this work — we never touch the funds.
             </p>
           </div>
           <Link

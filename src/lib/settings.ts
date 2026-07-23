@@ -10,9 +10,14 @@ export interface SiteSetting {
  * added freely — this is just used to render nice labels/hints. */
 export const KNOWN_SETTINGS: { key: string; label: string; hint: string }[] = [
   {
-    key: "donation_link",
-    label: "Donation link",
-    hint: "A Stripe Payment Link (or similar hosted checkout URL). Leave blank to show 'not open yet' on the Give Back page.",
+    key: "ngo_name",
+    label: "NGO partner name",
+    hint: "The name of the registered nonprofit you're partnering with (shown on the Give Back page).",
+  },
+  {
+    key: "ngo_donation_link",
+    label: "NGO donation link",
+    hint: "A direct link to the NGO's own donation page. DataSpark never collects or touches these funds — this just points visitors to the NGO's site.",
   },
 ];
 
