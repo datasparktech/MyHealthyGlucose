@@ -43,6 +43,11 @@ const MealSimulator = lazy(() => import("./pages/tools/MealSimulator"));
 const CGMAnalyzer = lazy(() => import("./pages/tools/CGMAnalyzer"));
 const CarbTargetCalculator = lazy(() => import("./pages/tools/CarbTargetCalculator"));
 const PostMealTarget = lazy(() => import("./pages/tools/PostMealTarget"));
+const Foods = lazy(() => import("./pages/Foods"));
+const FoodDetail = lazy(() => import("./pages/FoodDetail"));
+const Recipes = lazy(() => import("./pages/Recipes"));
+const RecipeDetail = lazy(() => import("./pages/RecipeDetail"));
+const NewlyDiagnosed = lazy(() => import("./pages/NewlyDiagnosed"));
 const Login = lazy(() => import("./pages/Login"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const AdminStore = lazy(() => import("./pages/AdminStore"));
@@ -86,6 +91,12 @@ export default function App() {
             <Route path="/legal/:slug" element={<Legal />} />
             <Route path="/store" element={<Store />} />
             <Route path="/give" element={<Give />} />
+
+            <Route path="/foods" element={<Foods />} />
+            <Route path="/foods/:slug" element={<FoodDetail />} />
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/recipes/:slug" element={<RecipeDetail />} />
+            <Route path="/newly-diagnosed" element={<NewlyDiagnosed />} />
 
             <Route path="/tools" element={<ToolsHub />} />
             <Route path="/tools/bmi-calculator" element={<BMICalculator />} />

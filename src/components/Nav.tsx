@@ -14,7 +14,10 @@ export default function Nav() {
   const { t } = useTranslation();
 
   const links = [
+    { to: "/newly-diagnosed", label: t("nav.startHere", { defaultValue: "Start Here" }) },
     { to: "/tools", label: t("nav.tools") },
+    { to: "/foods", label: t("nav.foods", { defaultValue: "Foods" }) },
+    { to: "/recipes", label: t("nav.recipes", { defaultValue: "Recipes" }) },
     { to: "/info", label: t("nav.infoHub") },
     { to: "/blog", label: t("nav.blog") },
     { to: "/assistant", label: t("nav.askAI") },
